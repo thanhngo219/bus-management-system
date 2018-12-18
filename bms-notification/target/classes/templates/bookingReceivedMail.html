@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title th:remove="all">Template for Booking email</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+	<div style="font-size: 20px">
+		<em>What ever you need ---</em>
+		<div style="text-indent: 8em;">
+			<img src="cid:imtheguy" height="80" width="80" /><em> .com</em>
+		</div>
+	</div>
+
+	<H4>We have received your booking!</H4>
+
+	<p>Here are your Booking details:</p>
+	<b>Booking Number: </b>
+	<span th:text="${booking.confirmationCode}"></span>
+
+
+	<p>
+		Thanks for your booking!!!<br /> &emsp; <em><b>3T Group</b></em>
+	</p>
+</body>
+</html>

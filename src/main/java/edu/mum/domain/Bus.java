@@ -10,23 +10,30 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
+@Table(name = "bus")
 public class Bus implements Serializable {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	
+
+	private static final long serialVersionUID = -337483805094368303L;
+
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id")
 	private Long id;
+	
 	@NotEmpty(message = "{msg.error.string.empty}")
+	@Column(name = "serialNumber")
 	private String serialNumber;
+	
 	@NotEmpty(message = "{msg.error.string.empty}")
+	@Column(name = "model")
 	private String model;
+	
 	@NotNull(message = "{msg.error.required}")
-	@Range(min = 0,max = 853, message="{msg.error.range}")
+	@Range(min = 0,max = 50, message="{msg.error.range}")
+	@Column(name = "capacity")
 	private int capacity;
-	@OneToMany(mappedBy="bus")
+	
+	@OneToMany(mappedBy="bus", cascade = CascadeType.ALL)
 	@OrderBy("departureDate, departureTime")
 	private List<Trip> trips;
 

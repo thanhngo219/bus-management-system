@@ -1,23 +1,34 @@
 package edu.mum.domain;
 
-import org.hibernate.validator.constraints.NotEmpty;
-
-import javax.persistence.*;
-
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
+import javax.persistence.Table;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
+@Table(name = "operator")
 public class Operator implements Serializable {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+
+	private static final long serialVersionUID = -7258668323575836429L;
+	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id")
 	private Long id;
+	
 	@NotEmpty(message = "{msg.error.string.empty}")
+	@Column(name = "operatorName")
 	private String operatorName;
+	
 	@OneToMany(mappedBy = "operator")
 	@OrderBy("departureDate, departureTime")
 	private List<Trip> trips;

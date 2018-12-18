@@ -1,62 +1,85 @@
 package edu.mum.domain;
 
-import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.format.annotation.DateTimeFormat;
-
-import javax.persistence.*;
-import javax.validation.constraints.Future;
-import javax.validation.constraints.NotNull;
-
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.Future;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
+@Table(name = "trip")
 public class Trip implements Serializable {
 	
-	private static final long serialVersionUID = 1L;
-	
-    @Id
+	private static final long serialVersionUID = 8395774482105703596L;
+
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id")
     private Long id;
     
     @NotEmpty(message = "{msg.error.string.empty}")
+    @Column(name = "tripnr")
     private String tripnr;
     
     @NotNull(message = "{msg.error.required}")
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Future(message = "{msg.error.date.future}")
+    @Column(name = "departureDate")
     private Date departureDate;
     
     @NotNull(message = "{msg.error.required}")
     @Temporal(TemporalType.TIME)
     @DateTimeFormat(pattern = "HH:mm")
+    @Column(name = "departureTime")
     private Date departureTime;
     
     @NotNull(message = "{msg.error.required}")
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Column(name = "arrivalDate")
     private Date arrivalDate;
     
     @NotNull(message = "{msg.error.required}")
     @Temporal(TemporalType.TIME)
     @DateTimeFormat(pattern = "HH:mm")
+    @Column(name = "arrivalTime")
     private Date arrivalTime;
    
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "operator_id")
     private Operator operator;
     
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "origin_id")
     private Station origin;
     
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "destination_id")
     private Station destination;
     
-    @ManyToOne    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "bus_id")
     private Bus bus;
     
-    @OneToMany
+    @OneToMany(mappedBy = "trip", cascade = CascadeType.ALL)
     private List<Booking> bookings;
 
     /* Constructors */

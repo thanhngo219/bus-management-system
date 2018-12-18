@@ -4,10 +4,15 @@ import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -16,27 +21,33 @@ import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
+@Table(name = "booking")
 public class Booking implements Serializable {
 	
-	private static final long serialVersionUID = 1L;
-	
+	private static final long serialVersionUID = -1703806514696828526L;
+
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id")
 	private Long id;
 	
 	@NotNull(message = "{msg.error.required}")
+	@Column(name = "confirmationCode")
 	private String confirmationCode;
 	
 	@Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "MM/dd/yyyy")
+	@Column(name = "bookingDate")
 	private Date bookingDate;
 
 	@Valid
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "trip_id")
     private Trip trip;
 	
 	@Valid
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "passenger_id")
     private Passenger passenger;
     
 	public Booking() {

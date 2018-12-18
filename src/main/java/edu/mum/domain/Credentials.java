@@ -1,5 +1,6 @@
 package edu.mum.domain;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -9,6 +10,7 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.persistence.Transient;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -16,9 +18,12 @@ import org.hibernate.validator.constraints.NotEmpty;
 import edu.mum.validator.PasswordFieldConstraint;
 import edu.mum.validator.PasswordsEqualConstraint;
 
-@Entity(name = "USERS")
+@Entity
+@Table(name = "USERS")
 @PasswordsEqualConstraint
-public class Credentials {
+public class Credentials implements Serializable {
+
+	private static final long serialVersionUID = 3218024505618751950L;
 
 	@Id
 	@Column(name = "USERNAME", nullable = false, unique = true)

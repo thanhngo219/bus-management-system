@@ -1,33 +1,52 @@
 package edu.mum.domain;
 
-import org.hibernate.validator.constraints.NotEmpty;
-
-import javax.persistence.*;
-
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
+import javax.persistence.Table;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
+@Table(name = "station")
 public class Station implements Serializable {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+
+	private static final long serialVersionUID = 5098421208838150884L;
+
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id")
 	private Long id;
+
 	@NotEmpty(message = "{msg.error.string.empty}")
+	@Column(name = "stationCode")
 	private String stationCode;
+
 	@NotEmpty(message = "{msg.error.string.empty}")
+	@Column(name = "stationName")
 	private String stationName;
+
 	@NotEmpty(message = "{msg.error.string.empty}")
+	@Column(name = "city")
 	private String city;
+
 	@NotEmpty(message = "{msg.error.string.empty}")
+	@Column(name = "country")
 	private String country;
-	@OneToMany(mappedBy = "destination")
+
+	@OneToMany(mappedBy = "destination", cascade = CascadeType.ALL)
 	@OrderBy("arrivalDate, arrivalTime")
 	private List<Trip> arrivals;
-	@OneToMany(mappedBy = "origin")
+
+	@OneToMany(mappedBy = "origin", cascade = CascadeType.ALL)
 	@OrderBy("departureDate, departureTime")
 	private List<Trip> departures;
 
@@ -135,7 +154,7 @@ public class Station implements Serializable {
 		}
 		return success;
 	}
-	
+
 	public String getStationDetail() {
 		return stationCode + " - " + stationName + " - " + city;
 	}

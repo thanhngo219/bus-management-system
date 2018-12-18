@@ -1,41 +1,44 @@
 package edu.mum.serviceimpl;
 
-import edu.mum.domain.Trip;
-import edu.mum.exception.InvalidTripException;
-import edu.mum.repository.TripRepository;
-import edu.mum.service.TripService;
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import edu.mum.dao.TripDao;
+import edu.mum.domain.Trip;
+import edu.mum.exception.InvalidTripException;
+import edu.mum.service.TripService;
+
 @Service
 @Transactional
 public class TripServiceImpl implements TripService {
 
-    @Autowired
-    TripRepository tripRepository;
+//    @Autowired
+//    TripRepository tripRepository;
+	
+	@Autowired
+	private TripDao tripDao;
 
     @Override
     public List<Trip> findAll() {
-        return (List<Trip>) tripRepository.findAll();
+        return (List<Trip>) tripDao.findAll();
     }
 
     @Override
     public Trip save(Trip trip) {
-        return tripRepository.save(trip);
+        return tripDao.update(trip);
     }
 
     @Override
     public Trip findOne(Long id) {
-        return tripRepository.findOne(id);
+        return tripDao.findOne(id);
     }
 
     @Override
     public void delete(Long id) {
-        tripRepository.delete(id);
+    	tripDao.delete(id);
     }
     
 	@Override

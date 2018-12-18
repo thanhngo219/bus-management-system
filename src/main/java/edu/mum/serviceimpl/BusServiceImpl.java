@@ -1,45 +1,47 @@
 package edu.mum.serviceimpl;
 
-import edu.mum.domain.Bus;
-import edu.mum.repository.BusRepository;
-import edu.mum.service.BusService;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
+import edu.mum.dao.BusDao;
+import edu.mum.domain.Bus;
+import edu.mum.service.BusService;
 
 @Service
 @Transactional
 public class BusServiceImpl implements BusService {
-    @Autowired
-    BusRepository busRepository;
+//    @Autowired
+//    BusRepository busRepository;
+	@Autowired
+	private BusDao busDao;
 
 
     @Override
     public List<Bus> findAll() {
-        return (List<Bus>) busRepository.findAll();
+        return (List<Bus>) busDao.findAll();
     }
 
     @Override
     public Bus save(Bus bus) {
-        return busRepository.save(bus);
+        return busDao.update(bus);
     }
 
     @Override
     public Bus findOne(Long id) {
-        return busRepository.findOne(id);
+        return busDao.findOne(id);
     }
 
     @Override
     public void delete(Long id) {
-        busRepository.delete(id);
+    	busDao.delete(id);
     }
 
 	@Override
 	public Long saveBus(Bus bus) {
-		Bus savedBus = busRepository.save(bus);
+		Bus savedBus = busDao.update(bus);
 		return savedBus.getId();
 	}
 }

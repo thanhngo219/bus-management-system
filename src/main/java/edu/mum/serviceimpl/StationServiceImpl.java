@@ -1,39 +1,41 @@
 package edu.mum.serviceimpl;
 
-import edu.mum.domain.Station;
-import edu.mum.repository.StationRepository;
-import edu.mum.service.StationService;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
+import edu.mum.dao.StationDao;
+import edu.mum.domain.Station;
+import edu.mum.service.StationService;
 
 @Service
 @Transactional
 public class StationServiceImpl implements StationService {
-    @Autowired
-    StationRepository stationRepository;
+//    @Autowired
+//    StationRepository stationRepository;
 
+	@Autowired
+	private StationDao stationDao;
 
     @Override
     public List<Station> findAll() {
-        return (List<Station>) stationRepository.findAll();
+        return (List<Station>) stationDao.findAll();
     }
 
     @Override
     public Station save(Station bus) {
-        return stationRepository.save(bus);
+        return stationDao.update(bus);
     }
 
     @Override
     public Station findOne(Long id) {
-        return stationRepository.findOne(id);
+        return stationDao.findOne(id);
     }
 
     @Override
     public void delete(Long id) {
-        stationRepository.delete(id);
+    	stationDao.delete(id);
     }
 }

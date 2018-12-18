@@ -12,10 +12,6 @@
       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
       http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
-
-	<jpa:repositories
-		base-package="edu.mum.repository" />
-
 	<context:property-placeholder
 		location="classpath:application.properties" />
 
@@ -60,7 +56,7 @@
 	<context:component-scan
 		base-package="edu.mum.service" />
 	<context:component-scan
-		base-package="edu.mum.repository" />
+		base-package="edu.mum.dao" />
 	
 	<!-- scan for java-based configuration -->
 	<context:component-scan base-package="edu.mum.config" />

@@ -41,12 +41,12 @@ public class Booking implements Serializable {
 	private Date bookingDate;
 
 	@Valid
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "trip_id")
     private Trip trip;
 	
 	@Valid
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "passenger_id")
     private Passenger passenger;
     

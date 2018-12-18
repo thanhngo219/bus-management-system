@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+	"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	
+	<definition name="baseLayout" template="/WEB-INF/tiles/template/admin_layoutTemplate.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="heading" value="" />
+		<put-attribute name="tagline" value="" />
+		<put-attribute name="admin_header" value="/WEB-INF/tiles/template/admin_header.jsp" />
+		<put-attribute name="admin_body" value="" />
+		<put-attribute name="admin_footer" value="/WEB-INF/tiles/template/admin_footer.jsp" />
+	</definition>
+
+ 	<definition name="admin/trip" extends="baseLayout">
+		<put-attribute name="title" value="Welcome, Admin"/>
+		<put-attribute name="heading" value="Welcome, Admin" />
+ 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/trip/index.jsp" />
+	</definition>
+	<definition name="admin/trip/new" extends="baseLayout">
+		<put-attribute name="title" value="Welcome, Admin"/>
+		<put-attribute name="heading" value="Welcome, Admin" />
+ 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/trip/new.jsp" />
+	</definition>
+	<definition name="admin/trip/edit" extends="baseLayout">
+		<put-attribute name="title" value="Welcome, Admin"/>
+		<put-attribute name="heading" value="Welcome, Admin" />
+ 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/trip/edit.jsp" />
+	</definition>	
+
+	<definition name="admin/station" extends="baseLayout">
+		<put-attribute name="title" value="Welcome, Admin"/>
+		<put-attribute name="heading" value="Welcome, Admin" />
+ 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/station/index.jsp" />
+	</definition>
+
+	<definition name="admin/station/edit" extends="baseLayout">
+		<put-attribute name="title" value="Welcome, Admin"/>
+		<put-attribute name="heading" value="Welcome, Admin" />
+ 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/station/edit.jsp" />
+	</definition>	
+
+	<definition name="admin/station/new" extends="baseLayout">
+		<put-attribute name="title" value="Welcome, Admin"/>
+		<put-attribute name="heading" value="Welcome, Admin" />
+ 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/station/new.jsp" />
+	</definition>	
+
+
+	<definition name="admin/bus" extends="baseLayout">
+		<put-attribute name="title" value="Welcome, Admin"/>
+		<put-attribute name="heading" value="Welcome, Admin" />
+ 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/bus/index.jsp" />
+	</definition>
+
+	<definition name="admin/bus/edit" extends="baseLayout">
+		<put-attribute name="title" value="Welcome, Admin"/>
+		<put-attribute name="heading" value="Welcome, Admin" />
+ 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/bus/edit.jsp" />
+	</definition>	
+
+	<definition name="admin/bus/new" extends="baseLayout">
+		<put-attribute name="title" value="Welcome, Admin"/>
+		<put-attribute name="heading" value="Welcome, Admin" />
+ 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/bus/new.jsp" />
+	</definition>	
+
+	<definition name="admin/operator" extends="baseLayout">
+		<put-attribute name="title" value="Welcome, Admin"/>
+		<put-attribute name="heading" value="Welcome, Admin" />
+ 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/operator/index.jsp" />
+	</definition>
+
+	<definition name="admin/operator/edit" extends="baseLayout">
+		<put-attribute name="title" value="Welcome, Admin"/>
+		<put-attribute name="heading" value="Welcome, Admin" />
+ 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/operator/edit.jsp" />
+	</definition>	
+
+	<definition name="admin/operator/new" extends="baseLayout">
+		<put-attribute name="title" value="Welcome, Admin"/>
+		<put-attribute name="heading" value="Welcome, Admin" />
+ 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/operator/new.jsp" />
+	</definition>
+
+	<definition name="login" extends="baseLayout">
+		<put-attribute name="title" value="Welcome, Admin"/>
+		<put-attribute name="heading" value="Welcome, Admin" />
+ 		<put-attribute name="admin_body" value="/WEB-INF/views/login.jsp" />
+	</definition>	
+</tiles-definitions>

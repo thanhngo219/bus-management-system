@@ -49,7 +49,6 @@
 		<h5 class="alert alert-info" role="alert"><spring:message code='msg.flow.title.pI'/></h5>
 		
 		<form:form modelAttribute="order" class="form-horizontal">
-			<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}" />
 			<table class="table table-borderless">			  
 			  <tbody>
 			    <tr>
@@ -114,7 +113,6 @@
 			</table>
 			
 			<p>&nbsp;</p>
-			<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}" />
 			
 			<button id="btnCancel" class="btn btn-default" name="_eventId_cancel"><spring:message code='msg.flow.btn.cancel'/></button>
 			

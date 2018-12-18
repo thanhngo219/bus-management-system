@@ -68,13 +68,11 @@
 			           <form:errors path="passportNumber" cssClass="alert alert-danger" />
 			           <form:input path="passportNumber" cssClass="form-control"/>
 			       </div>	 
-	
-	 				<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}"/>
 					
 					<div class="form-group">											
 						<button id="btnCancel" class="btn btn-default" name="_eventId_bookingCancelled"><spring:message code='msg.flow.btn.cancel'/></button>
 						<input type="submit" id="btnAdd" class="btn btn-primary float-right"
-							value="<spring:message code='msg.flow.btn.next'/>" name="_eventId_confirmationTrip" />						
+							value="<spring:message code='msg.flow.btn.next'/>" name="_eventId_confirmationTrip"/>						
 					</div>
 	
 				</fieldset>

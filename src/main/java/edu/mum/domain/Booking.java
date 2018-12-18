@@ -15,12 +15,6 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-/**
- * 
- * @author Quang Hiep Nguyen
- *
- */
-
 @Entity
 public class Booking implements Serializable {
 	

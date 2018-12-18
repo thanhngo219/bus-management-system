@@ -11,11 +11,6 @@ import edu.mum.domain.Trip;
 import edu.mum.service.BookingService;
 import edu.mum.service.TripService;
 
-/**
- * 
- * @author Quang Hiep Nguyen
- *
- */
 @Component
 public class BookingTripControllerHelper {
 

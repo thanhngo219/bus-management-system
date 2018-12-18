@@ -11,10 +11,6 @@ import org.springframework.validation.Validator;
 
 import edu.mum.domain.Trip;
 
-/**
- * @author Ba Bon Nguyen bnguyen@mum.edu
- *
- */
 @Component
 public class TripScheduleValidator implements Validator {
 

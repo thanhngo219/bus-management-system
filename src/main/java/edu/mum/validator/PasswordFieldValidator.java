@@ -6,10 +6,6 @@ import java.util.regex.Pattern;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-/**
- * @author Ba Bon Nguyen bnguyen@mum.edu
- *
- */
 public class PasswordFieldValidator implements ConstraintValidator<PasswordFieldConstraint, String> {
 
 	@Override

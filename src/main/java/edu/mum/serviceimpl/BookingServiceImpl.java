@@ -8,12 +8,6 @@ import edu.mum.domain.Booking;
 import edu.mum.repository.BookingRepository;
 import edu.mum.service.BookingService;
 
-/**
- * 
- * @author Quang Hiep Nguyen
- *
- */
-
 @Service
 @Transactional
 public class BookingServiceImpl implements BookingService {

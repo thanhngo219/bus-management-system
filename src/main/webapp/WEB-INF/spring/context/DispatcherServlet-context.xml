@@ -60,19 +60,6 @@
 	<mvc:resources  location="/resources/"  mapping="/resource/**"/>
  	<mvc:resources  location="/data/"  mapping="/data/**"/>
  
- 	<mvc:interceptors>
-    	<bean
-			class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
-			<property name="paramName" value="language" />
-		</bean>	 	
-		<mvc:interceptor>
-			<mvc:mapping path="/*"/>
-			<bean class="edu.mum.interceptor.NoticeInterceptor" >
-				<property name="messageAccessor" ref="messageAccessor"/> 
-			</bean>
-		</mvc:interceptor>	
-	</mvc:interceptors>
- 
 	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver"> 
 		<property name="defaultLocale" value="en_US"/> 
 	</bean> 	 

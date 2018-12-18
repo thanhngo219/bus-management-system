@@ -11,14 +11,19 @@ import edu.mum.domain.Trip;
 import edu.mum.service.BookingService;
 import edu.mum.service.TripService;
 
+/**
+ * 
+ * @author Quang Hiep Nguyen
+ *
+ */
 @Component
-public class BookingFlightControllerHelper {
+public class BookingTripControllerHelper {
 
 	@Autowired
 	BookingService bookingService;
 	
 	@Autowired
-	TripService flightService;
+	TripService tripService;
 	
 	public long saveBooking(Booking booking) {
 		booking.setConfirmationCode(this.generateCCode(8));
@@ -29,8 +34,8 @@ public class BookingFlightControllerHelper {
 		return 0L;
 	}
 	
-	public Trip validateFlight(String flightId) {		
-		Trip f = flightService.validateFlight(flightId);
+	public Trip validateTrip(String tripId) {		
+		Trip f = tripService.validateTrip(tripId);
 		System.out.println(f.toString());
 		return f;
 		

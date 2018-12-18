@@ -14,26 +14,26 @@ import java.util.List;
 @Transactional
 public class StationServiceImpl implements StationService {
     @Autowired
-    StationRepository repository;
+    StationRepository stationRepository;
 
 
     @Override
     public List<Station> findAll() {
-        return (List<Station>) repository.findAll();
+        return (List<Station>) stationRepository.findAll();
     }
 
     @Override
-    public Station save(Station airplane) {
-        return repository.save(airplane);
+    public Station save(Station bus) {
+        return stationRepository.save(bus);
     }
 
     @Override
     public Station findOne(Long id) {
-        return repository.findOne(id);
+        return stationRepository.findOne(id);
     }
 
     @Override
     public void delete(Long id) {
-        repository.delete(id);
+        stationRepository.delete(id);
     }
 }

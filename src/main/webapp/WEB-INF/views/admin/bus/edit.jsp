@@ -10,7 +10,7 @@
 	       <input type="hidden" name="Id" value="${bus.id}" />
 	
 	       <div class="form-group" >           
-	           <label for="airportnr"><spring:message code="msg.label.bus.serialNumber" /></label>          
+	           <label for="stationnr"><spring:message code="msg.label.bus.serialNumber" /></label>          
 	           <form:input path="serialNumber" cssClass="form-control"/>
 	       </div>
 	       <div class="form-group" style="float:none;">

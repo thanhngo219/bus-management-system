@@ -14,7 +14,7 @@ import edu.mum.service.BusService;
 public class BusFormatter implements Formatter<Bus> {
 
 	@Autowired
-	private BusService service;
+	private BusService busService;
 
 	@Override
 	public String print(Bus c, Locale locale) {
@@ -24,8 +24,8 @@ public class BusFormatter implements Formatter<Bus> {
 	@Override
 	public Bus parse(String text, Locale locale) throws ParseException {
 		System.out.println("Parsing Bus from: " + text);
-		Bus airplane = service.findOne(Long.parseLong(text));
-		return airplane;
+		Bus bus = busService.findOne(Long.parseLong(text));
+		return bus;
 	}
 
 }

@@ -11,6 +11,10 @@ import org.springframework.validation.Validator;
 
 import edu.mum.domain.Trip;
 
+/**
+ * @author Ba Bon Nguyen bnguyen@mum.edu
+ *
+ */
 @Component
 public class TripScheduleValidator implements Validator {
 
@@ -23,9 +27,9 @@ public class TripScheduleValidator implements Validator {
 	@Override
 	public void validate(Object target, Errors errors) {
 		// TODO Auto-generated method stub
-		Trip flight = (Trip) target;
-		Date departure = parseDateTime(flight.getDepartureDate(), flight.getDepartureTime(), "MM/dd/yyyy", "HH:mm");
-		Date arrival = parseDateTime(flight.getArrivalDate(), flight.getArrivalTime(), "MM/dd/yyyy", "HH:mm");
+		Trip trip = (Trip) target;
+		Date departure = parseDateTime(trip.getDepartureDate(), trip.getDepartureTime(), "MM/dd/yyyy", "HH:mm");
+		Date arrival = parseDateTime(trip.getArrivalDate(), trip.getArrivalTime(), "MM/dd/yyyy", "HH:mm");
 
 		if (departure == null) {
 			errors.rejectValue("departureDate", "msg.error.format.datetime");
@@ -36,22 +40,22 @@ public class TripScheduleValidator implements Validator {
 		}
 		
 		if (departure != null && arrival != null && !departure.before(arrival)) {
-			errors.rejectValue("arrivalDate", "msg.error.flight.departure.arrival.contraint");
+			errors.rejectValue("arrivalDate", "msg.error.trip.departure.arrival.contraint");
 		}
 
-		if (flight.getOperator() == null || flight.getOperator().getId() <= 0) {
-			errors.rejectValue("airline", "msg.error.airline.not.selected");
+		if (trip.getOperator() == null || trip.getOperator().getId() <= 0) {
+			errors.rejectValue("operator", "msg.error.operator.not.selected");
 		}
 
-		if (flight.getBus() == null || flight.getBus().getId() <= 0) {
-			errors.rejectValue("airplane", "msg.error.airplane.not.selected");
+		if (trip.getBus() == null || trip.getBus().getId() <= 0) {
+			errors.rejectValue("bus", "msg.error.bus.not.selected");
 		}
 
-		if (flight.getOrigin() == null || flight.getOrigin().getId() <= 0) {
+		if (trip.getOrigin() == null || trip.getOrigin().getId() <= 0) {
 			errors.rejectValue("origin", "msg.error.origin.not.selected");
 		}
 
-		if (flight.getDestination() == null || flight.getDestination().getId() <= 0) {
+		if (trip.getDestination() == null || trip.getDestination().getId() <= 0) {
 			errors.rejectValue("destination", "msg.error.destination.not.selected");
 		}
 	}

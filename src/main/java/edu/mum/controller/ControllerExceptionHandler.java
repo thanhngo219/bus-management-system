@@ -17,6 +17,7 @@ import edu.mum.domain.dto.DomainErrors;
 
 /**
  * Handler error for application
+ * @author Ba Bon Nguyen - bnguyen@mum.edu
  *
  */
 @ControllerAdvice

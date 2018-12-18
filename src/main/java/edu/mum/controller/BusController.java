@@ -25,13 +25,13 @@ public class BusController {
     }
 
     @RequestMapping(value="/new")
-	public String newAirplaneForm(Model model){
+	public String newBusForm(Model model){
 		model.addAttribute("bus", new Bus());
 		return "admin/bus/new";
 	}
 
 	@RequestMapping(value = "/new", method=RequestMethod.POST)
-	public String addNewAirplane(@Valid @ModelAttribute("bus") Bus bus,
+	public String addNewBus(@Valid @ModelAttribute("bus") Bus bus,
 			BindingResult bindingResult, Model model) {
 		if (bindingResult.hasErrors()) {
 			model.addAttribute("errors", bindingResult.getAllErrors());
@@ -53,14 +53,14 @@ public class BusController {
             model.addAttribute("errors", bindingResult.getAllErrors());
             return "admin/bus/edit";
         }
-        this.busService.save(bus); // airline.id already set by binding
+        this.busService.save(bus); // operator.id already set by binding
 
         return "redirect:/admin/bus";
     }
     
     @RequestMapping(value = "/add", method = RequestMethod.POST, consumes="application/json")
-	public @ResponseBody Bus addAirplane(@Valid @RequestBody Bus bus) {
-		long busId = busService.saveAirplane(bus);
+	public @ResponseBody Bus addBus(@Valid @RequestBody Bus bus) {
+		long busId = busService.saveBus(bus);
 		bus.setId(busId);
 		return bus;
 	}

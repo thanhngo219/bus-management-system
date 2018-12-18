@@ -10,11 +10,11 @@
 	       <input type="hidden" name="Id" value="${station.id}" />
 	
 	       <div class="form-group" >           
-	           <label for="stationnr"><spring:message code="msg.label.station.stationCode" /></label>          
+	           <label for="stationnr"><spring:message code="msg.label.station.code" /></label>          
 	           <form:input path="stationCode" cssClass="form-control"/>
 	       </div>
 	       <div class="form-group" style="float:none;">
-	           <label for="stationName"><spring:message code="msg.label.station.stationName" /></label>
+	           <label for="airtportName"><spring:message code="msg.label.station.stationName" /></label>
 	           <form:input path="stationName" cssClass="form-control"/>
 	       </div>
 	       <div class="form-group" style="float:none;">

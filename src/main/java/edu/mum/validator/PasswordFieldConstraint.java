@@ -13,6 +13,10 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
+/**
+ * @author Ba Bon Nguyen bnguyen@mum.edu
+ *
+ */
 @Target( { METHOD, FIELD, ElementType.TYPE, ANNOTATION_TYPE })
 @Retention(RUNTIME)
 @Constraint(validatedBy = PasswordFieldValidator.class)

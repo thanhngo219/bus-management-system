@@ -29,10 +29,10 @@
 			<c:forEach items="${trips}" var="trip">
 				<tr>
 					<td>${trip.tripnr}</td>
-					<td>${trip.origin.airportCode} - ${trip.origin.city}</td>
+					<td>${trip.origin.stationCode} - ${trip.origin.city}</td>
 					<td>${trip.departureDate}</td>
 					<td>${trip.departureTime}</td>
-					<td>${trip.destination.airportCode} - ${trip.destination.city}</td>
+					<td>${trip.destination.stationCode} - ${trip.destination.city}</td>
 					<td>${trip.arrivalDate}</td>
 					<td>${trip.arrivalTime}</td>
 					<td><a href="<spring:url value='/admin/trip/edit/${trip.id}'/>"

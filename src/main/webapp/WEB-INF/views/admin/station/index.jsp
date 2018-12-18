@@ -13,7 +13,7 @@
 	<table class="table table-striped">
 		<thead class="thead-dark">
 			<tr>
-				<th><spring:message code="msg.label.station.stationCode" /></th>
+				<th><spring:message code="msg.label.station.code" /></th>
 				<th><spring:message code="msg.label.station.stationName" /></th>
 				<th><spring:message code="msg.label.station.city" /></th>
 				<th><spring:message code="msg.label.station.country" /></th>

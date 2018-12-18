@@ -5,6 +5,10 @@ import javax.validation.ConstraintValidatorContext;
 
 import edu.mum.domain.Credentials;
 
+/**
+ * @author Ba Bon Nguyen bnguyen@mum.edu
+ *
+ */
 public class PasswordEqualValidator implements ConstraintValidator<PasswordsEqualConstraint, Object> {
 
 	/*

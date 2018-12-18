@@ -14,32 +14,32 @@ import java.util.List;
 @Transactional
 public class BusServiceImpl implements BusService {
     @Autowired
-    BusRepository repository;
+    BusRepository busRepository;
 
 
     @Override
     public List<Bus> findAll() {
-        return (List<Bus>) repository.findAll();
+        return (List<Bus>) busRepository.findAll();
     }
 
     @Override
-    public Bus save(Bus airplane) {
-        return repository.save(airplane);
+    public Bus save(Bus bus) {
+        return busRepository.save(bus);
     }
 
     @Override
     public Bus findOne(Long id) {
-        return repository.findOne(id);
+        return busRepository.findOne(id);
     }
 
     @Override
     public void delete(Long id) {
-        repository.delete(id);
+        busRepository.delete(id);
     }
 
 	@Override
-	public Long saveAirplane(Bus airplane) {
-		Bus savedAirplane = repository.save(airplane);
-		return savedAirplane.getId();
+	public Long saveBus(Bus bus) {
+		Bus savedBus = busRepository.save(bus);
+		return savedBus.getId();
 	}
 }

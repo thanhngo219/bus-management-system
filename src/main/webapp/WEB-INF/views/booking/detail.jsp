@@ -23,47 +23,47 @@
 		  </tbody>
 		</table>
 	
-		<h5 class="alert alert-info" role="alert"><spring:message code="msg.mbking.title.flight" /></h5>
+		<h5 class="alert alert-info" role="alert"><spring:message code="msg.mbking.title.trip" /></h5>
 		<table class="table table-borderless">			  
 		  <tbody>
 		    <tr>
-		      <th scope="row"><spring:message code="msg.label.flight.flightnr" /></th>
-		      <td>${booking.flight.flightnr}</td>			      
+		      <th scope="row"><spring:message code="msg.label.trip.tripnr" /></th>
+		      <td>${booking.trip.tripnr}</td>			      
 		    </tr>	
 		    	
 		    <tr>
-      		  <th scope="row"><spring:message code="msg.label.flight.departureDate" /></th>
-		      <td>${booking.flight.departureDate}</td>			      
+      		  <th scope="row"><spring:message code="msg.label.trip.departureDate" /></th>
+		      <td>${booking.trip.departureDate}</td>			      
 		    </tr>	
 		    
 		    <tr>
-      		  <th scope="row"><spring:message code="msg.label.flight.departureTime" /></th>
-		      <td>${booking.flight.departureTime}</td>			      
+      		  <th scope="row"><spring:message code="msg.label.trip.departureTime" /></th>
+		      <td>${booking.trip.departureTime}</td>			      
 		    </tr>	  
 		    
 		    <tr>
-      		  <th scope="row"><spring:message code="msg.label.flight.arrivalDate" /></th>
-		      <td>${booking.flight.arrivalDate}</td>			      
+      		  <th scope="row"><spring:message code="msg.label.trip.arrivalDate" /></th>
+		      <td>${booking.trip.arrivalDate}</td>			      
 		    </tr>	
 		    
 		    <tr>
-      		  <th scope="row" class="w-50"><spring:message code="msg.label.flight.arrivalTime" /></th>
-		      <td>${booking.flight.arrivalTime}</td>			      
+      		  <th scope="row" class="w-50"><spring:message code="msg.label.trip.arrivalTime" /></th>
+		      <td>${booking.trip.arrivalTime}</td>			      
 		    </tr>	
 		    
 		    <tr>
-      		  <th scope="row" class="w-50"><spring:message code="msg.label.flight.airline" /></th>
-		      <td>${booking.flight.airline.airlineName}</td>			      
+      		  <th scope="row" class="w-50"><spring:message code="msg.label.trip.operator" /></th>
+		      <td>${booking.trip.operator.operatorName}</td>			      
 		    </tr>	
 		    
 		    <tr>
-      		  <th scope="row"><spring:message code="msg.label.flight.departure" /></th>
-		      <td>${booking.flight.origin.airportDetail}</td>			      
+      		  <th scope="row"><spring:message code="msg.label.trip.departure" /></th>
+		      <td>${booking.trip.origin.stationDetail}</td>			      
 		    </tr>
 		    
 	     	<tr>
-      		  <th scope="row"><spring:message code="msg.label.flight.destination" /></th>
-		      <td>${booking.flight.destination.airportDetail}</td>			      
+      		  <th scope="row"><spring:message code="msg.label.trip.destination" /></th>
+		      <td>${booking.trip.destination.stationDetail}</td>			      
 		    </tr>			    
 		     
 		  </tbody>

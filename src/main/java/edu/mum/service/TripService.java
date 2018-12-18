@@ -4,6 +4,6 @@ import edu.mum.domain.Trip;
 
 public interface TripService extends BaseService<Trip> {
 	
-    public Trip validateFlight(String flightId);
+    public Trip validateTrip(String tripId);
 
 }

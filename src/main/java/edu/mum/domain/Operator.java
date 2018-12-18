@@ -26,8 +26,8 @@ public class Operator implements Serializable {
 	public Operator() {
 	}
 
-	public Operator(String name) {
-		this.operatorName = name;
+	public Operator(String operatorName) {
+		this.operatorName = operatorName;
 	}
 
 	/* Getters & Setters */

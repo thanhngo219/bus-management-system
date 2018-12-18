@@ -15,27 +15,27 @@ import org.springframework.transaction.annotation.Transactional;
 public class OperatorServiceImpl implements OperatorService {
 
     @Autowired
-    private OperatorRepository repository;
+    private OperatorRepository operatorRepository;
 
     @Override
 
     public List<Operator> findAll() {
-        return (List<Operator>) repository.findAll();
+        return (List<Operator>) operatorRepository.findAll();
     }
 
     @Override
-    public Operator save(Operator airline) {
-        return repository.save(airline);
+    public Operator save(Operator operator) {
+        return operatorRepository.save(operator);
     }
 
     @Override
     public Operator findOne(Long id) {
-        return repository.findOne(id);
+        return operatorRepository.findOne(id);
     }
 
     @Override
     public void delete(Long id) {
-        repository.delete(id);
+        operatorRepository.delete(id);
     }
 
 }

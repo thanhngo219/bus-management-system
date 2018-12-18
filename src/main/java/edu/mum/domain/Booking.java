@@ -15,6 +15,12 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+/**
+ * 
+ * @author Quang Hiep Nguyen
+ *
+ */
+
 @Entity
 public class Booking implements Serializable {
 	
@@ -33,7 +39,7 @@ public class Booking implements Serializable {
 
 	@Valid
     @ManyToOne
-    private Trip flight;
+    private Trip trip;
 	
 	@Valid
     @ManyToOne(cascade = CascadeType.ALL)
@@ -41,7 +47,7 @@ public class Booking implements Serializable {
     
 	public Booking() {
 		this.passenger = new Passenger();
-		this.flight = new Trip();
+		this.trip = new Trip();
 	}
 
 	public Long getId() {
@@ -68,12 +74,12 @@ public class Booking implements Serializable {
 		this.bookingDate = bookingDate;
 	}
 
-	public Trip getFlight() {
-		return flight;
+	public Trip getTrip() {
+		return trip;
 	}
 
-	public void setFlight(Trip flight) {
-		this.flight = flight;
+	public void setTrip(Trip trip) {
+		this.trip = trip;
 	}
 
 	public Passenger getPassenger() {

@@ -25,13 +25,13 @@ public class OperatorController{
     }
 
     @RequestMapping(value = "/new", method=RequestMethod.GET)
-    public String newAirlineForm(@ModelAttribute("operator") Operator operator, Model model) {
+    public String newOperatorForm(@ModelAttribute("operator") Operator operator, Model model) {
     	model.addAttribute("operator", new Operator());
     	return "admin/operator/new";
     }
 
     @RequestMapping(value = "/new", method=RequestMethod.POST)
-    public String addNewAirline(@Valid @ModelAttribute("operator") Operator operator,
+    public String addNewOperator(@Valid @ModelAttribute("operator") Operator operator,
                                  BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("errors", bindingResult.getAllErrors());

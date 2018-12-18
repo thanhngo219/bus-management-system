@@ -8,22 +8,28 @@ import edu.mum.domain.Booking;
 import edu.mum.repository.BookingRepository;
 import edu.mum.service.BookingService;
 
+/**
+ * 
+ * @author Quang Hiep Nguyen
+ *
+ */
+
 @Service
 @Transactional
 public class BookingServiceImpl implements BookingService {
 	@Autowired
-	BookingRepository repository;
+	BookingRepository bookingRepository;
 
 
 	@Override
 	public Booking saveBooking(Booking booking) {
-		return repository.save(booking);
+		return bookingRepository.save(booking);
 		
 	}
 
 	@Override
 	public Booking findBookingByCC(String cCode) {
-		return repository.findBookingByConfirmationCode(cCode);
+		return bookingRepository.findBookingByConfirmationCode(cCode);
 	}
 
 }

@@ -7,6 +7,11 @@ import org.springframework.stereotype.Repository;
 
 import edu.mum.domain.Booking;
 
+/**
+ * 
+ * @author Quang Hiep Nguyen
+ *
+ */
 @Repository
 public interface BookingRepository extends CrudRepository<Booking, Long> {
 	@Query("SELECT b FROM Booking b WHERE confirmationCode = :cCode")

@@ -7,7 +7,7 @@
 	       <legend><spring:message code="msg.label.operator.addNew" /></legend>
 			<form:errors path="*" cssStyle="color:red;" />
 	       <div class="form-group" >           
-	           <label for=operatorName><spring:message code="msg.label.operator.operatorName" /></label>          
+	           <label for="operatorName"><spring:message code="msg.label.operator.operatorName" /></label>          
 	           <form:input path="operatorName" cssClass="form-control"/>
 	       </div>
 	 

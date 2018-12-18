@@ -1,7 +1,7 @@
 package edu.mum.serviceimpl;
 
 import edu.mum.domain.Trip;
-import edu.mum.exception.InvalidFlightException;
+import edu.mum.exception.InvalidTripException;
 import edu.mum.repository.TripRepository;
 import edu.mum.service.TripService;
 
@@ -16,44 +16,44 @@ import org.springframework.transaction.annotation.Transactional;
 public class TripServiceImpl implements TripService {
 
     @Autowired
-    TripRepository repository;
+    TripRepository tripRepository;
 
     @Override
     public List<Trip> findAll() {
-        return (List<Trip>) repository.findAll();
+        return (List<Trip>) tripRepository.findAll();
     }
 
     @Override
-    public Trip save(Trip flight) {
-        return repository.save(flight);
+    public Trip save(Trip trip) {
+        return tripRepository.save(trip);
     }
 
     @Override
     public Trip findOne(Long id) {
-        return repository.findOne(id);
+        return tripRepository.findOne(id);
     }
 
     @Override
     public void delete(Long id) {
-        repository.delete(id);
+        tripRepository.delete(id);
     }
     
 	@Override
-	public Trip validateFlight(String flightId) {
+	public Trip validateTrip(String tripId) {
 		
-		if(flightId == null || flightId.isEmpty()) {
-			throw new InvalidFlightException("Invalid flight number" + flightId);
+		if(tripId == null || tripId.isEmpty()) {
+			throw new InvalidTripException("Invalid trip number" + tripId);
 		}
 		
-		long flightID = Long.parseLong(flightId);
+		long tripID = Long.parseLong(tripId);
 		
-		Trip flight = this.findOne(flightID);
+		Trip trip = this.findOne(tripID);
 		
-		if(flight == null) {
-			throw new InvalidFlightException("Invalid flight number" + flightId);
+		if(trip == null) {
+			throw new InvalidTripException("Invalid trip number" + tripId);
 		}
 		
-		return flight;
+		return trip;
 
 	}
 

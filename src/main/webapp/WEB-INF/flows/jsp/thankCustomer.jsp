@@ -20,7 +20,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="<spring:url value='/' />">3T Flight</a>
+    <a class="navbar-brand" href="<spring:url value='/' />">3T Bus Management System</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -50,7 +50,7 @@
 				<h1 class="alert alert-info"><spring:message code='msg.flow.title.thankyou'/></h1>
 				<p><spring:message code='msg.flow.title.niceTrip'/></p>
 				<p><spring:message code='msg.flow.title.cCode'/>: <span class="text-success" style="font-size: 25px; font-weight: bold">${booking.confirmationCode}</span></p>
-				<a href="<spring:url value="/flights" />" class="btn btn-primary"><spring:message code='msg.flow.title.flight'/></a>			
+				<a href="<spring:url value="/trips" />" class="btn btn-primary"><spring:message code='msg.flow.title.trip'/></a>			
 			</div>
 		</div>
 	</section>

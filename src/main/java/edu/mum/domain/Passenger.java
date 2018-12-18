@@ -10,6 +10,12 @@ import javax.persistence.OneToMany;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+/**
+ * 
+ * @author Quang Hiep Nguyen
+ *
+ */
+
 @Entity
 public class Passenger implements Serializable {
 	

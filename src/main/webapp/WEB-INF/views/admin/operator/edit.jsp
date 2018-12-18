@@ -10,7 +10,7 @@
 	       <input type="hidden" name="Id" value="${operator.id}" />
 	
 	       <div class="form-group" >           
-	           <label for="operatorName"><spring:message code="msg.label.operator.operatorName" /></label>          
+	           <label for="operatorname"><spring:message code="msg.label.operator.operatorName" /></label>          
 	           <form:input path="operatorName" cssClass="form-control"/>
 	       </div>
 	     

@@ -35,9 +35,9 @@ public class Station implements Serializable {
 	public Station() {
 	}
 
-	public Station(String code, String name, String city, String country) {
-		this.stationCode = code;
-		this.stationName = name;
+	public Station(String stationcode, String stationName, String city, String country) {
+		this.stationCode = stationcode;
+		this.stationName = stationName;
 		this.city = city;
 		this.country = country;
 	}
@@ -55,8 +55,8 @@ public class Station implements Serializable {
 		return stationCode;
 	}
 
-	public void setStationCode(String stationCode) {
-		this.stationCode = stationCode;
+	public void setStationCode(String stationcode) {
+		this.stationCode = stationcode;
 	}
 
 	public String getStationName() {
@@ -136,7 +136,7 @@ public class Station implements Serializable {
 		return success;
 	}
 	
-	public String getAirportDetail() {
+	public String getStationDetail() {
 		return stationCode + " - " + stationName + " - " + city;
 	}
 }

@@ -20,7 +20,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="<spring:url value='/' />">3T Flight</a>
+    <a class="navbar-brand" href="<spring:url value='/' />">3T Bus Management System</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -74,7 +74,7 @@
 					<div class="form-group">											
 						<button id="btnCancel" class="btn btn-default" name="_eventId_bookingCancelled"><spring:message code='msg.flow.btn.cancel'/></button>
 						<input type="submit" id="btnAdd" class="btn btn-primary float-right"
-							value="<spring:message code='msg.flow.btn.next'/>" name="_eventId_confirmationFlight" />						
+							value="<spring:message code='msg.flow.btn.next'/>" name="_eventId_confirmationTrip" />						
 					</div>
 	
 				</fieldset>

@@ -19,19 +19,19 @@ public class StationController {
     private StationService stationService;
 
     @RequestMapping(value = "", method = RequestMethod.GET)
-	public String flights(Model model) {
+	public String trips(Model model) {
 		model.addAttribute("stations", stationService.findAll());
 		return "admin/station";
 	}
     
     @RequestMapping(value="/new", method = RequestMethod.GET)
-	public String newAirplaneForm(Model model){
+	public String newBusForm(Model model){
 		model.addAttribute("station", new Station());
 		return "admin/station/new";
 	}
 
 	@RequestMapping(value = "/new", method=RequestMethod.POST)
-	public String addNewAirplane(@Valid @ModelAttribute("station") Station station,
+	public String addNewBus(@Valid @ModelAttribute("station") Station station,
 			BindingResult bindingResult, Model model) {
 		if (bindingResult.hasErrors()) {
 			model.addAttribute("errors", bindingResult.getAllErrors());

@@ -44,18 +44,18 @@ public class TripController {
 		return operatorService.findAll();
 	}
 	
-	@ModelAttribute("busStations")
+	@ModelAttribute("stations")
 	private List<Station> getStations(){
 		return stationService.findAll();
 	}
 	
-	@ModelAttribute("buses")
-	private List<Bus> getBuses(){
+	@ModelAttribute("buss")
+	private List<Bus> getBuss(){
 		return busService.findAll();
 	}
 
 	@RequestMapping(value={"/admin/trip", "/admin/trip/","/admin/trip/index"}, method = RequestMethod.GET)
-	public String adminFlights(Model model) {
+	public String adminTrips(Model model) {
 		model.addAttribute("trips", tripService.findAll());
 		return "admin/trip";
 	}
@@ -67,13 +67,13 @@ public class TripController {
 	}
 	
 	@RequestMapping(value = "/admin/trip/new", method = RequestMethod.GET)
-	public String newFlightForm(@ModelAttribute("trip")Trip trip, Model model){
+	public String newTripForm(@ModelAttribute("trip")Trip trip, Model model){
 		
 		return "admin/trip/new";
 	}
 
 	@RequestMapping(value = "/admin/trip/new", method = RequestMethod.POST)
-	public String scheduleNewFlight(@Valid @ModelAttribute("trip") Trip trip,
+	public String scheduleNewTrip(@Valid @ModelAttribute("trip") Trip trip,
 			BindingResult bindingResult, Model model) {
 		
 		tripScheduleValidator.validate(trip, bindingResult);
@@ -103,7 +103,7 @@ public class TripController {
     }
 	
 	@RequestMapping(value= "/admin/trip/edit/{id}", method = RequestMethod.POST)
-	public String editFlight(@Valid @ModelAttribute("trip") Trip trip,
+	public String editTrip(@Valid @ModelAttribute("trip") Trip trip,
 							 BindingResult bindingResult, Model model) {
 		
 		tripScheduleValidator.validate(trip, bindingResult);

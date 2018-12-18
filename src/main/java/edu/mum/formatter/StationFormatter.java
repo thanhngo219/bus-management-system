@@ -14,7 +14,7 @@ import edu.mum.service.StationService;
 public class StationFormatter implements Formatter<Station> {
 
 	@Autowired
-	private StationService service;
+	private StationService stationService;
 
 	@Override
 	public String print(Station c, Locale locale) {
@@ -24,8 +24,8 @@ public class StationFormatter implements Formatter<Station> {
 	@Override
 	public Station parse(String text, Locale locale) throws ParseException {
 		System.out.println("Parsing Station from: " + text);
-		Station airport = service.findOne(Long.parseLong(text));
-		return airport;
+		Station station = stationService.findOne(Long.parseLong(text));
+		return station;
 	}
 
 }

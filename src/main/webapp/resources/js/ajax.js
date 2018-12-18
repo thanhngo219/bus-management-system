@@ -3,7 +3,7 @@
 // [0] has "" as a result of split 
 var contextRoot = "/" + window.location.pathname.split( '/' )[1];
 
-function saveAirplane(){
+function saveBus(){
    	var dataToSend = JSON.stringify({
    		id: '0',
    		serialNumber: $("#serialNumber").val(),
@@ -13,13 +13,13 @@ function saveAirplane(){
    	var csrfParam = $("#csrfParam").val();
    	var csrfValue = $("#csrfValue").val();
    	$.ajax({
-		url: contextRoot + '/admin/airplane/add?' + csrfParam + '=' + csrfValue,
+		url: contextRoot + '/admin/bus/add?' + csrfParam + '=' + csrfValue,
 		type: 'POST',
 		dataType: "json",
  		data:dataToSend,
  		contentType: 'application/json',
-		success: function(airplane){
-			console.log('result', airplane);
+		success: function(bus){
+			console.log('result', bus);
 			$('#errors').html("");
 	 	    $('#result').show();
 	 	    setTimeout(function() {

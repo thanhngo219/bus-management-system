@@ -14,7 +14,7 @@ import edu.mum.service.OperatorService;
 public class OperatorFormatter implements Formatter<Operator> {
 
 	@Autowired
-	private OperatorService service;
+	private OperatorService operatorService;
 
 	@Override
 	public String print(Operator c, Locale locale) {
@@ -24,8 +24,8 @@ public class OperatorFormatter implements Formatter<Operator> {
 	@Override
 	public Operator parse(String text, Locale locale) throws ParseException {
 		System.out.println("Parsing Operator from: " + text);
-		Operator airline = service.findOne(Long.parseLong(text));
-		return airline;
+		Operator operator = operatorService.findOne(Long.parseLong(text));
+		return operator;
 	}
 
 }

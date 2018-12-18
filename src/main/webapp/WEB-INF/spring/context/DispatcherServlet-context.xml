@@ -50,7 +50,7 @@
 		class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
 		<property name="formatters">
 			<set>
-				<bean class="edu.mum.formatter.BusOperatorFormatter"></bean>
+				<bean class="edu.mum.formatter.OperatorFormatter"></bean>
 				<bean class="edu.mum.formatter.BusFormatter"></bean>
 				<bean class="edu.mum.formatter.StationFormatter"></bean>
 			</set>

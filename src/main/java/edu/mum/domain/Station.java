@@ -17,9 +17,9 @@ public class Station implements Serializable {
 	@GeneratedValue
 	private Long id;
 	@NotEmpty(message = "{msg.error.string.empty}")
-	private String code;
+	private String stationCode;
 	@NotEmpty(message = "{msg.error.string.empty}")
-	private String name;
+	private String stationName;
 	@NotEmpty(message = "{msg.error.string.empty}")
 	private String city;
 	@NotEmpty(message = "{msg.error.string.empty}")
@@ -36,8 +36,8 @@ public class Station implements Serializable {
 	}
 
 	public Station(String code, String name, String city, String country) {
-		this.code = code;
-		this.name = name;
+		this.stationCode = code;
+		this.stationName = name;
 		this.city = city;
 		this.country = country;
 	}
@@ -51,20 +51,20 @@ public class Station implements Serializable {
 		this.id = id;
 	}
 
-	public String getCode() {
-		return code;
+	public String getStationCode() {
+		return stationCode;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setStationCode(String stationCode) {
+		this.stationCode = stationCode;
 	}
 
-	public String getName() {
-		return name;
+	public String getStationName() {
+		return stationName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setStationName(String stationName) {
+		this.stationName = stationName;
 	}
 
 	public String getCity() {
@@ -137,6 +137,6 @@ public class Station implements Serializable {
 	}
 	
 	public String getAirportDetail() {
-		return code + " - " + name + " - " + city;
+		return stationCode + " - " + stationName + " - " + city;
 	}
 }

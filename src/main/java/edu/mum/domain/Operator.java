@@ -17,8 +17,8 @@ public class Operator implements Serializable {
 	@GeneratedValue
 	private Long id;
 	@NotEmpty(message = "{msg.error.string.empty}")
-	private String name;
-	@OneToMany(mappedBy = "busOperator")
+	private String operatorName;
+	@OneToMany(mappedBy = "operator")
 	@OrderBy("departureDate, departureTime")
 	private List<Trip> trips;
 
@@ -27,7 +27,7 @@ public class Operator implements Serializable {
 	}
 
 	public Operator(String name) {
-		this.name = name;
+		this.operatorName = name;
 	}
 
 	/* Getters & Setters */
@@ -39,12 +39,12 @@ public class Operator implements Serializable {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getOperatorName() {
+		return operatorName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setOperatorName(String operatorName) {
+		this.operatorName = operatorName;
 	}
 
 	public List<Trip> getTrips() {
@@ -59,7 +59,7 @@ public class Operator implements Serializable {
 	public boolean addTrip(Trip trip) {
 		boolean success = false;
 		if (trips.add(trip)) {
-			trip.setBusOperator(this);
+			trip.setOperator(this);
 			success = true;
 		}
 		return success;
@@ -68,7 +68,7 @@ public class Operator implements Serializable {
 	public boolean removeTrip(Trip trip) {
 		boolean success = false;
 		if (trips.remove(trip)) {
-			trip.setBusOperator(null);
+			trip.setOperator(null);
 			success = true;
 		}
 		return success;

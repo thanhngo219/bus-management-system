@@ -18,7 +18,7 @@ public class StationFormatter implements Formatter<Station> {
 
 	@Override
 	public String print(Station c, Locale locale) {
-		return c.getCode() + " - " + c.getCity() + " - " + c.getCountry();
+		return c.getStationCode() + " - " + c.getCity() + " - " + c.getCountry();
 	}
 
 	@Override

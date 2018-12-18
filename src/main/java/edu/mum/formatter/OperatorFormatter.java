@@ -11,19 +11,19 @@ import edu.mum.domain.Operator;
 import edu.mum.service.OperatorService;
 
 @Component
-public class BusOperatorFormatter implements Formatter<Operator> {
+public class OperatorFormatter implements Formatter<Operator> {
 
 	@Autowired
 	private OperatorService service;
 
 	@Override
 	public String print(Operator c, Locale locale) {
-		return c.getName();
+		return c.getOperatorName();
 	}
 
 	@Override
 	public Operator parse(String text, Locale locale) throws ParseException {
-		System.out.println("Parsing BusOperator from: " + text);
+		System.out.println("Parsing Operator from: " + text);
 		Operator airline = service.findOne(Long.parseLong(text));
 		return airline;
 	}

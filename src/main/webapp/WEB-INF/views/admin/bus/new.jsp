@@ -30,7 +30,7 @@
 		<div style="float: right;">
 			<a href="${pageContext.request.contextPath}/admin/bus"
 				class="btn btn-outline-warning"><spring:message
-					code="msg.label.flight.cancel" /></a>&nbsp;&nbsp;&nbsp;
+					code="msg.label.trip.cancel" /></a>&nbsp;&nbsp;&nbsp;
 			<button id="btnNew" onclick="saveAirplane()"
 				class="btn btn-outline-success">
 				<spring:message code="msg.label.btnNew" />

@@ -32,19 +32,19 @@
 	       </div>
 	       
 	       <div class="form-group" >
-	       		<label for="airline"><spring:message code="msg.label.trip.airline" /></label>
-	       		<form:select path="airline.id">
-	       			<form:option value="-1" label="Please select Airline"/>
-	       			<form:options items="${airlines}" itemValue="id" itemLabel="airlineName"/>
+	       		<label for="operator"><spring:message code="msg.label.trip.operator" /></label>
+	       		<form:select path="operator.id">
+	       			<form:option value="-1" label="Please select Operator"/>
+	       			<form:options items="${operators}" itemValue="id" itemLabel="operatorName"/>
 	       		</form:select>
 	       		
 	       </div>
 	       
 	       <div class="form-group" >
-	       		<label for="airplane"><spring:message code="msg.label.trip.airplane" /></label>
-	       		<form:select path="airplane.id">
-	       			<form:option value="-1" label="Please select Airplane"/>
-	       			<form:options items="${airplanes}" itemValue="id" itemLabel="serialModel" />
+	       		<label for="bus"><spring:message code="msg.label.trip.bus" /></label>
+	       		<form:select path="bus.id">
+	       			<form:option value="-1" label="Please select Bus"/>
+	       			<form:options items="${buss}" itemValue="id" itemLabel="serialModel" />
 	       		</form:select>
 	       </div>
 	       
@@ -52,7 +52,7 @@
 	       		<label for="departure"><spring:message code="msg.label.trip.departure" /></label>
 	       		<form:select path="origin.id">
 	       			<form:option value="-1" label="Please select Origin"/>
-	       			<form:options items="${airports}" itemValue="id" itemLabel="airportDetail" />
+	       			<form:options items="${stations}" itemValue="id" itemLabel="stationDetail" />
 	       		</form:select>
 	       </div>
 	       
@@ -60,7 +60,7 @@
 	       		<label for="destination"><spring:message code="msg.label.trip.destination" /></label>
 	       		<form:select path="destination.id">
 	       			<form:option value="-1" label="Please select Destination"/>
-	       			<form:options items="${airports}" itemValue="id" itemLabel="airportDetail" />
+	       			<form:options items="${stations}" itemValue="id" itemLabel="stationDetail" />
 	       		</form:select>
 	       </div>
 	       

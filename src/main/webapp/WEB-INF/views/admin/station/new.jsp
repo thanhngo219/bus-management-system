@@ -7,11 +7,11 @@
 	       <legend><spring:message code="msg.label.station.addNew" /></legend>
 			<form:errors path="*" cssStyle="color:red;" />
 	       <div class="form-group" >           
-	           <label for="stationnr"><spring:message code="msg.label.station.code" /></label>          
+	           <label for="stationnr"><spring:message code="msg.label.station.stationCode" /></label>          
 	           <form:input path="stationCode" cssClass="form-control"/>
 	       </div>
 	       <div class="form-group" style="float:none;">
-	           <label for="airtportName"><spring:message code="msg.label.station.name" /></label>
+	           <label for="stationName"><spring:message code="msg.label.station.stationName" /></label>
 	           <form:input path="stationName" cssClass="form-control"/>
 	       </div>
 	       <div class="form-group" style="float:none;">
@@ -25,7 +25,7 @@
 	       
 	      
 	       <div style="float:right;">
-	            <a href="${pageContext.request.contextPath}/admin/station" class="btn btn-outline-warning"><spring:message code="msg.label.flight.cancel" /></a>&nbsp;&nbsp;&nbsp;
+	            <a href="${pageContext.request.contextPath}/admin/station" class="btn btn-outline-warning"><spring:message code="msg.label.trip.cancel" /></a>&nbsp;&nbsp;&nbsp;
 	            <button id="btnNew" type="submit" name="edit" class="btn btn-outline-success"><spring:message code="msg.label.btnNew" /></button>
 	        </div>
 	    </fieldset>

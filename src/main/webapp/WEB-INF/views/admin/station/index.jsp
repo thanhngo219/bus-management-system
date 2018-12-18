@@ -13,7 +13,7 @@
 	<table class="table table-striped">
 		<thead class="thead-dark">
 			<tr>
-				<th><spring:message code="msg.label.station.code" /></th>
+				<th><spring:message code="msg.label.station.stationCode" /></th>
 				<th><spring:message code="msg.label.station.stationName" /></th>
 				<th><spring:message code="msg.label.station.city" /></th>
 				<th><spring:message code="msg.label.station.country" /></th>
@@ -24,8 +24,8 @@
 		<tbody>
 			<c:forEach items="${stations}" var="station">
 				<tr>
-					<td>${station.code}</td>
-					<td>${station.name}</td>
+					<td>${station.stationCode}</td>
+					<td>${station.stationName}</td>
 					<td>${station.city}</td>
 					<td>${station.country}</td>
 					

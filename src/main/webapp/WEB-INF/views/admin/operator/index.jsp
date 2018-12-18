@@ -13,7 +13,7 @@
 	<table class="table table-striped">
 		<thead class="thead-dark">
 			<tr>
-				<th><spring:message code="msg.label.operator.name" /></th>
+				<th><spring:message code="msg.label.operator.operatorName" /></th>
 				<th></th>
 				
 			</tr>

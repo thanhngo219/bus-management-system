@@ -45,7 +45,7 @@ public class Trip implements Serializable {
     private Date arrivalTime;
    
     @ManyToOne
-    private Operator busOperator;
+    private Operator operator;
     
     @ManyToOne
     private Station origin;
@@ -72,12 +72,12 @@ public class Trip implements Serializable {
         this.id = id;
     }
 
-    public String getFlightnr() {
+    public String getTripnr() {
         return tripnr;
     }
 
-    public void setFlightnr(String flightnr) {
-        this.tripnr = flightnr;
+    public void setTripnr(String tripnr) {
+        this.tripnr = tripnr;
     }
 
     public Date getDepartureDate() {
@@ -112,12 +112,12 @@ public class Trip implements Serializable {
         this.arrivalTime = arrivalTime;
     }
 
-    public Operator getBusOperator() {
-        return busOperator;
+    public Operator getOperator() {
+        return operator;
     }
 
-    public void setBusOperator(Operator busOperator) {
-        this.busOperator = busOperator;
+    public void setOperator(Operator operator) {
+        this.operator = operator;
     }
 
     public Station getOrigin() {

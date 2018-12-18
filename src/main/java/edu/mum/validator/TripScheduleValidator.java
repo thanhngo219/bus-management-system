@@ -39,7 +39,7 @@ public class TripScheduleValidator implements Validator {
 			errors.rejectValue("arrivalDate", "msg.error.flight.departure.arrival.contraint");
 		}
 
-		if (flight.getBusOperator() == null || flight.getBusOperator().getId() <= 0) {
+		if (flight.getOperator() == null || flight.getOperator().getId() <= 0) {
 			errors.rejectValue("airline", "msg.error.airline.not.selected");
 		}
 

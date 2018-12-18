@@ -1,5 +1,6 @@
 package edu.mum.controller;
 
+import edu.mum.amqp.BookingPublisher;
 import edu.mum.domain.Booking;
 import edu.mum.domain.Trip;
 import edu.mum.service.BookingService;
@@ -7,8 +8,6 @@ import edu.mum.service.TripService;
 
 import java.util.Date;
 import java.util.Random;
-
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,6 +25,9 @@ public class BookingController {
 
 	@Autowired
 	private TripService tripService;
+
+	@Autowired
+	private BookingPublisher bookingPulisher;
 
 	@RequestMapping(value = "/mybooking", method = RequestMethod.GET)
 	public String getMyBooking() {
@@ -81,7 +83,8 @@ public class BookingController {
 		booking.setConfirmationCode(this.generateCCode(8));
 		booking.setBookingDate(new Date());
 		Booking booked = bookingService.saveBooking(booking);
-		if(booked != null) {
+		if (booked != null) {
+			bookingPulisher.publish(booked);
 			return "jsp/thankCustomer";
 		}
 		return "jsp/bookingConfirmation";

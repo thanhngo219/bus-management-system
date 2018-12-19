@@ -88,7 +88,7 @@ public class Passenger implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Passenger [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", bookings=" + bookings + "]";
+		return "Passenger [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + "]";
 	}
 	
 }

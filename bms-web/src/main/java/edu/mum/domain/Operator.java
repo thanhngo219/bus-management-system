@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -87,7 +88,7 @@ public class Operator implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Operator [id=" + id + ", operatorName=" + operatorName + ", trips=" + trips + "]";
+		return "Operator [id=" + id + ", operatorName=" + operatorName + "]";
 	}
 	
 }

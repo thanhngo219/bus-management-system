@@ -30,4 +30,34 @@
 		<put-attribute name="heading" value="" />
  		<put-attribute name="user_body" value="/WEB-INF/views/booking/detail.jsp" />
 	</definition>
+	
+	 <definition name="booking/collectPassengerInfo" extends="baseUserLayout">
+		<put-attribute name="title" value=""/>
+		<put-attribute name="heading" value="" />
+ 		<put-attribute name="user_body" value="/WEB-INF/views/booking/collectPassengerInfo.jsp" />
+	</definition>
+	
+	<definition name="booking/bookingConfirmation" extends="baseUserLayout">
+		<put-attribute name="title" value=""/>
+		<put-attribute name="heading" value="" />
+ 		<put-attribute name="user_body" value="/WEB-INF/views/booking/bookingConfirmation.jsp" />
+	</definition>
+	
+	<definition name="booking/bookingCancelled" extends="baseUserLayout">
+		<put-attribute name="title" value=""/>
+		<put-attribute name="heading" value="" />
+ 		<put-attribute name="user_body" value="/WEB-INF/views/booking/bookingCancelled.jsp" />
+	</definition>
+	
+	<definition name="booking/invalidFlightWarning" extends="baseUserLayout">
+		<put-attribute name="title" value=""/>
+		<put-attribute name="heading" value="" />
+ 		<put-attribute name="user_body" value="/WEB-INF/views/booking/invalidFlightWarning.jsp" />
+	</definition>
+	
+	<definition name="booking/thankCustomer" extends="baseUserLayout">
+		<put-attribute name="title" value=""/>
+		<put-attribute name="heading" value="" />
+ 		<put-attribute name="user_body" value="/WEB-INF/views/booking/thankCustomer.jsp" />
+	</definition>		
 </tiles-definitions>

@@ -60,7 +60,7 @@ public class BookingController {
 		Booking booking = new Booking();
 		booking.setTrip(trip);
 		model.addAttribute("booking", booking);
-		return "jsp/collectPassengerInfo";
+		return "booking/collectPassengerInfo";
 	}
 	
 //	@RequestMapping(value = "/booking", method = RequestMethod.GET, params = {"_eventId_bookingCancelled", "_eventId_cancel"})
@@ -71,24 +71,24 @@ public class BookingController {
 	@RequestMapping(value = "/booking", method = RequestMethod.POST, params = {"_eventId_confirmationTrip"})
 	public String gotoConfirmationPage(@Valid @ModelAttribute("booking") Booking booking, BindingResult bindingResult) {
 		if (bindingResult.hasErrors()) {
-			return "jsp/collectPassengerInfo";
+			return "booking/collectPassengerInfo";
 		}
-		return "jsp/bookingConfirmation";
+		return "booking/bookingConfirmation";
 	}
 	
 	@RequestMapping(value = "/booking", method = RequestMethod.POST, params = {"_eventId_bookingConfirmed"})
 	public String bookATrip(@ModelAttribute("booking") Booking booking, BindingResult bindingResult) {
 		if (bindingResult.hasErrors()) {
-			return "jsp/bookingConfirmation";
+			return "booking/bookingConfirmation";
 		}
 		booking.setConfirmationCode(this.generateCCode(8));
 		booking.setBookingDate(new Date());
 		Booking booked = bookingService.saveBooking(booking);
 		if (booked != null) {
 			bookingPulisher.publish(booked);
-			return "jsp/thankCustomer";
+			return "booking/thankCustomer";
 		}
-		return "jsp/bookingConfirmation";
+		return "booking/bookingConfirmation";
 	}
 
 	private Trip validateTrip(String tripId) {

@@ -34,10 +34,6 @@
             <li class="nav-item">
                 <a class="nav-link" href="<spring:url value='/mybooking' />">|&nbsp; <spring:message code='msg.label.mybooking'/></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="javascript:openOnlineSupport();"
-						class="btn btn-default">|&nbsp; <spring:message code='msg.label.onlinesupport'/></a>
-            </li>             
         </ul>      
     </div>
 </nav>

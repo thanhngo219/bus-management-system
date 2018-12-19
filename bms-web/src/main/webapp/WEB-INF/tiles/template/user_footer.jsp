@@ -5,39 +5,7 @@
 
 </div>
 <!-- /.container -->
-<!--chat dialog-->
-<div id="chatDialog" class="modal fade modeless">
-	<div class="modal-dialog">
-		<div class="modal-content">
 
-			<input type="hidden" id="me" value="Client" /> <input type="hidden"
-				id="other" value="Support" />
-
-			<div class="modal-header">
-				<div id="chatModalTitle">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-hidden="true">&times;</button>
-					<h4 class="modal-title">
-						<spring:message code='msg.label.chat.support' />
-					</h4>
-				</div>
-			</div>
-			<div class="modal-body">
-				<div id="chatMessageContainer"></div>
-			</div>
-			<div class="modal-footer">
-				<div id="chatModalFooter">
-					<form class="form" onsubmit="return sendMessage(this)"
-						autocomplete="off">
-						<input type="text" class="form-input" id='chatMessage' />
-					</form>
-				</div>
-			</div>
-		</div>
-		<!-- /.modal-content -->
-	</div>
-	<!-- /.modal-dialog -->
-</div>
 <!-- /.modal -->
 <footer id="footerContainer" class="footer">
 	<div class="container  panel-footer">

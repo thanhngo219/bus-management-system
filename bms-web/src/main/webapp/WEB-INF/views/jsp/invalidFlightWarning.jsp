@@ -50,13 +50,6 @@
 	</section>
 </div>
 <!-- /.container -->
-<footer id="footerContainer" class="footer">
-	<div class="container">
-		<span class="text-muted">Prof. Joe Bruen ::: 3T Group
-			(CS544)</span><span style="float: right;" class="text-muted">&copy
-			December 2018</span>
-	</div>
-</footer>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->

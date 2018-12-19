@@ -32,7 +32,7 @@ import org.springframework.stereotype.Service;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 
-import edu.mum.domain.Booking;
+import edu.mum.domain.PlainBooking;
 
 @Service("emailService")
 public class EmailService {
@@ -50,7 +50,7 @@ public class EmailService {
 	/*
 	 * Send HTML mail
 	 */
-	public void sendBookingReceivedMail(Booking booking, final Locale locale)
+	public void sendBookingReceivedMail(PlainBooking booking, final Locale locale)
 			throws MessagingException {
 
 		// Prepare the Thymeleaf evaluation context
@@ -63,7 +63,7 @@ public class EmailService {
 		message.setSubject("Booking Details: " + booking.getConfirmationCode());
 
 		// could have CC, BCC, will also take an array of Strings
-		message.setTo(booking.getPassenger().getEmail());
+		message.setTo(booking.getPassengerEmail());
 
 		// Create the HTML body using Thymeleaf..template is bookingReceivedMail.html
 		final String htmlContent = this.templateEngine.process("bookingReceivedMail", thymeContext);
@@ -82,7 +82,7 @@ public class EmailService {
 
 		// Send email
 		this.mailSender.send(mimeMessage);
-		System.out.println("> Sent email to " + booking.getPassenger().getEmail());
+		System.out.println("> Sent email to " + booking.getPassengerEmail());
 	}
 
 }

@@ -6,29 +6,29 @@
 </head>
 <body>
 
-	<H4>Dear <span th:text="${booking.passenger.firstName}"></span>, we have received your booking!</H4>
+	<H4>Dear <span th:text="${booking.passengerFirstName}"></span>, we have received your booking!</H4>
 
 	<p>Here are your Booking details:</p>
 	<b>Booking Number: </b>
 	<span th:text="${booking.confirmationCode}"></span>
 	<br />
 	<b>Trip Number: </b>
-	<span th:text="${booking.trip.tripnr}"></span>
+	<span th:text="${booking.tripnr}"></span>
 	<br />
 	<b>From: </b>
-	<span th:text="${booking.trip.origin.stationDetail}" ></span>
+	<span th:text="${booking.origin}" ></span>
 	<br />
 	<b>To: </b>
-	<span th:text="${booking.trip.destination.stationDetail}" ></span>
+	<span th:text="${booking.destination}" ></span>
 	<br />
 	<b>Departure Time: </b>
-	<span th:text="${booking.trip.departureDate}"></span> <span th:text="${booking.trip.departureTime}"></span>
+	<span th:text="${booking.departureTime}"></span>
 	<br />
 	<b>Arrival Time: </b>
-	<span th:text="${booking.trip.arrivalDate}"></span> <span th:text="${booking.trip.arrivalTime}"></span>
+	<span th:text="${booking.arrivalTime}"></span>
 	<br />
 	<b>Operator: </b>
-	<span th:text="${booking.trip.operator.operatorName}"></span>
+	<span th:text="${booking.operatorName}"></span>
 	<br />
 
 	<p>

@@ -20,6 +20,8 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import edu.mum.validator.Persistence;
+
 @Entity
 @Table(name = "booking")
 public class Booking implements Serializable {
@@ -31,7 +33,7 @@ public class Booking implements Serializable {
 	@Column(name = "id")
 	private Long id;
 	
-	@NotNull(message = "{msg.error.required}")
+	@NotNull(message = "{msg.error.required}", groups = {Persistence.class})
 	@Column(name = "confirmationCode")
 	private String confirmationCode;
 	

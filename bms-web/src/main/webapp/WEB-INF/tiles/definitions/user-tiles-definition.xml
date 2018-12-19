@@ -31,6 +31,12 @@
  		<put-attribute name="user_body" value="/WEB-INF/views/booking/detail.jsp" />
 	</definition>
 	
+	<definition name="booking/bookingATrip" extends="baseUserLayout">
+		<put-attribute name="title" value=""/>
+		<put-attribute name="heading" value="" />
+ 		<put-attribute name="user_body" value="/WEB-INF/views/booking/bookingATrip.jsp" />
+	</definition>
+	
 	 <definition name="booking/collectPassengerInfo" extends="baseUserLayout">
 		<put-attribute name="title" value=""/>
 		<put-attribute name="heading" value="" />
@@ -59,5 +65,5 @@
 		<put-attribute name="title" value=""/>
 		<put-attribute name="heading" value="" />
  		<put-attribute name="user_body" value="/WEB-INF/views/booking/thankCustomer.jsp" />
-	</definition>		
+	</definition>			
 </tiles-definitions>

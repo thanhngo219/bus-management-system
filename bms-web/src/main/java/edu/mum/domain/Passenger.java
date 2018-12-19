@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
@@ -34,8 +35,9 @@ public class Passenger implements Serializable {
 	private String lastName;
 	
 	@NotEmpty(message = "{msg.error.required}")
-	@Column(name = "passportNumber")
-	private String passportNumber;
+	@Email
+	@Column(name = "email")
+	private String email;
 	
 	@OneToMany(mappedBy = "passenger", cascade = CascadeType.ALL)
 	private List<Booking> bookings;
@@ -68,12 +70,12 @@ public class Passenger implements Serializable {
 		this.lastName = lastName;
 	}
 	
-	public String getPassportNumber() {
-		return passportNumber;
+	public String getEmail() {
+		return email;
 	}
 	
-	public void setPassportNumber(String passportNumber) {
-		this.passportNumber = passportNumber;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public List<Booking> getBookings() {

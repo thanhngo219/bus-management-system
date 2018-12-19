@@ -37,7 +37,7 @@ import edu.mum.domain.Booking;
 @Service("emailService")
 public class EmailService {
 
-	private static final String IM_THE_GUY = "templates/images/imtheguy.jpg";
+	private static final String LOGO = "templates/images/bms.jpg";
 
 	private static final String JPG_MIME = "image/jpg";
 
@@ -50,8 +50,8 @@ public class EmailService {
 	/*
 	 * Send HTML mail
 	 */
-	public void sendBookingReceivedMail(final String recipientEmail, Booking booking,
-			final Locale locale) throws MessagingException {
+	public void sendBookingReceivedMail(Booking booking, final Locale locale)
+			throws MessagingException {
 
 		// Prepare the Thymeleaf evaluation context
 		final Context thymeContext = new Context(locale);
@@ -60,17 +60,17 @@ public class EmailService {
 		// Prepare message using a Spring helper
 		final MimeMessage mimeMessage = this.mailSender.createMimeMessage();
 		final MimeMessageHelper message = new MimeMessageHelper(mimeMessage, true, "UTF-8");
-		message.setSubject("Booking Details");
+		message.setSubject("Booking Details: " + booking.getConfirmationCode());
 
 		// could have CC, BCC, will also take an array of Strings
-		message.setTo(recipientEmail);
+		message.setTo(booking.getPassenger().getEmail());
 
 		// Create the HTML body using Thymeleaf..template is bookingReceivedMail.html
 		final String htmlContent = this.templateEngine.process("bookingReceivedMail", thymeContext);
 		message.setText(htmlContent, true /* isHtml */);
 
 		// Add imtheguy.jpg
-		message.addInline("imtheguy", new ClassPathResource(IM_THE_GUY), JPG_MIME);
+		message.addInline("logo", new ClassPathResource(LOGO), JPG_MIME);
 
 		// Add attachment
 //		String documentLocation = "templates/images/" + documentName;
@@ -82,7 +82,7 @@ public class EmailService {
 
 		// Send email
 		this.mailSender.send(mimeMessage);
-
+		System.out.println("> Sent email to " + booking.getPassenger().getEmail());
 	}
 
 }

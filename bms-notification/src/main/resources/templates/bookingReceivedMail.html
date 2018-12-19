@@ -6,22 +6,34 @@
 </head>
 <body>
 
-	<div style="font-size: 20px">
-		<em>What ever you need ---</em>
-		<div style="text-indent: 8em;">
-			<img src="cid:imtheguy" height="80" width="80" /><em> .com</em>
-		</div>
-	</div>
-
-	<H4>We have received your booking!</H4>
+	<H4>Dear <span th:text="${booking.passenger.firstName}"></span>, we have received your booking!</H4>
 
 	<p>Here are your Booking details:</p>
 	<b>Booking Number: </b>
 	<span th:text="${booking.confirmationCode}"></span>
-
+	<br />
+	<b>Trip Number: </b>
+	<span th:text="${booking.trip.tripnr}"></span>
+	<br />
+	<b>From: </b>
+	<span th:text="${booking.trip.origin.stationDetail}" ></span>
+	<br />
+	<b>To: </b>
+	<span th:text="${booking.trip.destination.stationDetail}" ></span>
+	<br />
+	<b>Departure Time: </b>
+	<span th:text="${booking.trip.departureDate}"></span> <span th:text="${booking.trip.departureTime}"></span>
+	<br />
+	<b>Arrival Time: </b>
+	<span th:text="${booking.trip.arrivalDate}"></span> <span th:text="${booking.trip.arrivalTime}"></span>
+	<br />
+	<b>Operator: </b>
+	<span th:text="${booking.trip.operator.operatorName}"></span>
+	<br />
 
 	<p>
-		Thanks for your booking!!!<br /> &emsp; <em><b>3T Group</b></em>
+		Thanks for your booking! Have a nice trip!<br /> &emsp; <em><b>3T Bus Management System</b></em><br />
+		<img src="cid:logo" />
 	</p>
 </body>
 </html>

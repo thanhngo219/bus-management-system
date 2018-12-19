@@ -34,10 +34,6 @@
             <li class="nav-item">
                 <a class="nav-link" href="<spring:url value='/mybooking' />">|&nbsp; <spring:message code='msg.label.mybooking'/></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="javascript:openOnlineSupport();"
-						class="btn btn-default">|&nbsp; <spring:message code='msg.label.onlinesupport'/></a>
-            </li>             
         </ul>
        
     </div>
@@ -64,9 +60,9 @@
 			       </div>
 			       
 	         	   <div class="form-group" >           
-			           <label for="passportNumber"><spring:message code='msg.flow.lbl.pp'/></label>          
-			           <form:errors path="passportNumber" cssClass="alert alert-danger" />
-			           <form:input path="passportNumber" cssClass="form-control"/>
+			           <label for="email"><spring:message code='msg.flow.lbl.email'/></label>          
+			           <form:errors path="email" cssClass="alert alert-danger" />
+			           <form:input path="email" cssClass="form-control"/>
 			       </div>	 
 					
 					<div class="form-group">											

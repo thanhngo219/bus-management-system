@@ -62,5 +62,16 @@
  
 	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver"> 
 		<property name="defaultLocale" value="en_US"/> 
-	</bean> 	 
+	</bean>
+	
+	<mvc:annotation-driven>
+		<mvc:message-converters>
+			<bean
+				class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+				<property name="objectMapper">
+					<bean class="edu.mum.rest.HibernateAwareObjectMapper" />
+				</property>
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven> 	 
  </beans>

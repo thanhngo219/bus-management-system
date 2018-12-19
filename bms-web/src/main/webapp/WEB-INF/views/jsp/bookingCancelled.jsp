@@ -43,9 +43,9 @@
 	<section>
 		<div class="jumbotron">
 			<div class="container">
-				<h1 class="alert alert-danger"><spring:message code='msg.flow.title.cancel'/></h1>
-				<p><spring:message code='msg.flow.ann.cancel'/></p>
-				<a href="<spring:url value="/trips" />" class="btn btn-primary"><spring:message code='msg.flow.title.trip'/></a>
+				<h1 class="alert alert-danger"><spring:message code='msg.booking.title.cancel'/></h1>
+				<p><spring:message code='msg.booking.ann.cancel'/></p>
+				<a href="<spring:url value="/trips" />" class="btn btn-primary"><spring:message code='msg.booking.title.trip'/></a>
 			</div>
 		</div>
 	</section>

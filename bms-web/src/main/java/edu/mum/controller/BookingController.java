@@ -9,6 +9,8 @@ import edu.mum.service.TripService;
 import java.util.Date;
 import java.util.Random;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -58,7 +60,6 @@ public class BookingController {
 		Booking booking = new Booking();
 		booking.setTrip(trip);
 		model.addAttribute("booking", booking);
-		
 		return "jsp/collectPassengerInfo";
 	}
 	
@@ -68,7 +69,7 @@ public class BookingController {
 //	}
 
 	@RequestMapping(value = "/booking", method = RequestMethod.POST, params = {"_eventId_confirmationTrip"})
-	public String gotoConfirmationPage(@ModelAttribute("booking") Booking booking, BindingResult bindingResult) {
+	public String gotoConfirmationPage(@Valid @ModelAttribute("booking") Booking booking, BindingResult bindingResult) {
 		if (bindingResult.hasErrors()) {
 			return "jsp/collectPassengerInfo";
 		}
@@ -92,7 +93,6 @@ public class BookingController {
 
 	private Trip validateTrip(String tripId) {
 		Trip f = tripService.validateTrip(tripId);
-		System.out.println(f.toString());
 		return f;
 
 	}

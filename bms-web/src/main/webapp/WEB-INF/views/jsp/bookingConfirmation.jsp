@@ -41,28 +41,28 @@
 <p>&nbsp;</p>
 <div class="container" style="width: 60%">	
 	<div class="jumbotron" style="padding-top: 15px">				
-		<h2 class="alert alert-primary text-center"><spring:message code='msg.flow.title.bC'/></h2>		
-		<h5 class="alert alert-info" role="alert"><spring:message code='msg.flow.title.pI'/></h5>
+		<h2 class="alert alert-primary text-center"><spring:message code='msg.booking.title.bC'/></h2>		
+		<h5 class="alert alert-info" role="alert"><spring:message code='msg.booking.title.pI'/></h5>
 		
 		<form:form modelAttribute="order" class="form-horizontal">
 			<table class="table table-borderless">			  
 			  <tbody>
 			    <tr>
-			      <th scope="row" class="w-50"><spring:message code='msg.flow.lbl.fN'/></th>
+			      <th scope="row" class="w-50"><spring:message code='msg.booking.lbl.fN'/></th>
 			      <td>${booking.passenger.firstName}</td>			      
 			    </tr>
 			    <tr>
-			      <th scope="row"><spring:message code='msg.flow.lbl.lN'/></th>
+			      <th scope="row"><spring:message code='msg.booking.lbl.lN'/></th>
 			      <td>${booking.passenger.lastName}</td>		      
 			    </tr>
 			    <tr>
-			      <th scope="row"><spring:message code='msg.flow.lbl.email'/></th>
+			      <th scope="row"><spring:message code='msg.booking.lbl.email'/></th>
 			      <td colspan="2">${booking.passenger.email}</td>		     
 			    </tr>
 			  </tbody>
 			</table>
 		
-			<h5 class="alert alert-info" role="alert"><spring:message code='msg.flow.title.fI'/></h5>
+			<h5 class="alert alert-info" role="alert"><spring:message code='msg.booking.title.fI'/></h5>
 			<table class="table table-borderless">			  
 			  <tbody>
 			    <tr>
@@ -110,11 +110,11 @@
 			
 			<p>&nbsp;</p>
 			
-			<button id="btnCancel" class="btn btn-default" name="_eventId_cancel"><spring:message code='msg.flow.btn.cancel'/></button>
+			<button id="btnCancel" class="btn btn-default" name="_eventId_cancel"><spring:message code='msg.booking.btn.cancel'/></button>
 			
-			<button id="back" class="btn btn-warning" name="_eventId_backToPassengerInfo"><spring:message code='msg.flow.btn.back'/></button>
+			<button id="back" class="btn btn-warning" name="_eventId_backToPassengerInfo"><spring:message code='msg.booking.btn.back'/></button>
 	
-			<button type="submit" class="btn btn-success float-right" name="_eventId_bookingConfirmed"><spring:message code='msg.flow.btn.confirm'/></button>
+			<button type="submit" class="btn btn-success float-right" name="_eventId_bookingConfirmed"><spring:message code='msg.booking.btn.confirm'/></button>
 			
 		</form:form>		
 	</div>	

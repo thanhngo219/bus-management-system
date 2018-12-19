@@ -9,15 +9,15 @@
 		<table class="table table-borderless">			  
 		  <tbody>
 		    <tr>
-		      <th scope="row" class="w-50"><spring:message code="msg.flow.lbl.fN" /></th>
+		      <th scope="row" class="w-50"><spring:message code="msg.booking.lbl.fN" /></th>
 		      <td>${booking.passenger.firstName}</td>			      
 		    </tr>
 		    <tr>
-		      <th scope="row"><spring:message code="msg.flow.lbl.lN" /></th>
+		      <th scope="row"><spring:message code="msg.booking.lbl.lN" /></th>
 		      <td>${booking.passenger.lastName}</td>		      
 		    </tr>
 		    <tr>
-		      <th scope="row"><spring:message code="msg.flow.lbl.email" /></th>
+		      <th scope="row"><spring:message code="msg.booking.lbl.email" /></th>
 		      <td colspan="2">${booking.passenger.email}</td>		     
 		    </tr>
 		  </tbody>

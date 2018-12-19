@@ -45,30 +45,30 @@
 		<div class="col-md-6 mx-auto">
 			<form:form modelAttribute="booking.passenger" class="form-horizontal">
 				<fieldset>
-					<legend><spring:message code='msg.flow.title.pDetail'/></legend>
-	
+					<legend><spring:message code='msg.booking.title.pDetail'/></legend>
+					
 					<div class="form-group" >           
-			           <label for="firstName"><spring:message code='msg.flow.lbl.fN'/></label>          
+			           <label for="firstName"><spring:message code='msg.booking.lbl.fN'/></label>          
 			           <form:errors path="firstName" cssClass="alert alert-danger" />
 			           <form:input path="firstName" cssClass="form-control"/>
 			       </div>	
 						
 				   <div class="form-group" >           
-			           <label for="lastName"><spring:message code='msg.flow.lbl.lN'/></label>          
+			           <label for="lastName"><spring:message code='msg.booking.lbl.lN'/></label>          
 			           <form:errors path="lastName" cssClass="alert alert-danger" />
 			           <form:input path="lastName" cssClass="form-control"/>
 			       </div>
 			       
 	         	   <div class="form-group" >           
-			           <label for="email"><spring:message code='msg.flow.lbl.email'/></label>          
+			           <label for="email"><spring:message code='msg.booking.lbl.email'/></label>          
 			           <form:errors path="email" cssClass="alert alert-danger" />
 			           <form:input path="email" cssClass="form-control"/>
 			       </div>	 
 					
 					<div class="form-group">											
-						<button id="btnCancel" class="btn btn-default" name="_eventId_bookingCancelled"><spring:message code='msg.flow.btn.cancel'/></button>
+						<button id="btnCancel" class="btn btn-default" name="_eventId_bookingCancelled"><spring:message code='msg.booking.btn.cancel'/></button>
 						<input type="submit" id="btnAdd" class="btn btn-primary float-right"
-							value="<spring:message code='msg.flow.btn.next'/>" name="_eventId_confirmationTrip"/>						
+							value="<spring:message code='msg.booking.btn.next'/>" name="_eventId_confirmationTrip"/>						
 					</div>
 	
 				</fieldset>

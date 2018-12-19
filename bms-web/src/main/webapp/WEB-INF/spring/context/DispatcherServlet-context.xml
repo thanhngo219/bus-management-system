@@ -33,8 +33,9 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
-	<bean id= "messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
-   		<property name="basename" value="messages"/> 
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basenames" value="classpath:messages,classpath:errorMessages" />
 	</bean>
 	
 	<bean id="messageAccessor" class="org.springframework.context.support.MessageSourceAccessor">

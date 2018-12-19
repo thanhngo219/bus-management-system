@@ -12,7 +12,7 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
- 	<mvc:annotation-driven validator="validator"/>
+ 	<mvc:annotation-driven validator="validator" conversion-service="conversionService"/>
  	<tx:annotation-driven />
 	<context:component-scan base-package="edu.mum" />
 	<aop:aspectj-autoproxy />
@@ -33,8 +33,9 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
-	<bean id= "messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
-   		<property name="basename" value="messages"/> 
+  	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basenames" value="classpath:messages" />
 	</bean>
 	
 	<bean id="messageAccessor" class="org.springframework.context.support.MessageSourceAccessor">

@@ -3,9 +3,6 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <spring:url value='/admin/trip/edit/${trip.id}' var='actionURL'/>
 <div class="container" style="width: 70%">
-
-	<spring:url value='/trip' var='actionURL' />
-
 	<form:form action="${actionURL}" method="post" modelAttribute="trip">
 	   <fieldset>
 	       <legend><spring:message code="msg.label.trip.edit" /></legend>

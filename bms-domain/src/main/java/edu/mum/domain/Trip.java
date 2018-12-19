@@ -23,6 +23,8 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 @Table(name = "trip")
 public class Trip implements Serializable {
@@ -48,6 +50,7 @@ public class Trip implements Serializable {
     @NotNull(message = "{msg.error.required}")
     @Temporal(TemporalType.TIME)
     @DateTimeFormat(pattern = "HH:mm")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm:ss")
     @Column(name = "departureTime")
     private Date departureTime;
     
@@ -60,6 +63,7 @@ public class Trip implements Serializable {
     @NotNull(message = "{msg.error.required}")
     @Temporal(TemporalType.TIME)
     @DateTimeFormat(pattern = "HH:mm")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm:ss")
     @Column(name = "arrivalTime")
     private Date arrivalTime;
    

@@ -1,4 +1,4 @@
-package edu.mum.serviceimpl;
+package edu.mum.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,10 +14,6 @@ public class BookingServiceImpl implements BookingService {
 	
 	@Autowired
 	private BookingDao bookingDao;
-	
-//	@Autowired
-//	BookingRepository bookingRepository;
-
 
 	@Override
 	public Booking saveBooking(Booking booking) {

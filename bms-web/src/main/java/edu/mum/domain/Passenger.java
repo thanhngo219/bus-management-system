@@ -83,5 +83,11 @@ public class Passenger implements Serializable {
 	public void setPassenger(List<Booking> bookings) {
 		this.bookings = bookings;
 	}
+
+	@Override
+	public String toString() {
+		return "Passenger [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", passportNumber="
+				+ passportNumber + ", bookings=" + bookings + "]";
+	}
 	
 }

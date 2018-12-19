@@ -84,4 +84,10 @@ public class Operator implements Serializable {
 		}
 		return success;
 	}
+
+	@Override
+	public String toString() {
+		return "Operator [id=" + id + ", operatorName=" + operatorName + ", trips=" + trips + "]";
+	}
+	
 }

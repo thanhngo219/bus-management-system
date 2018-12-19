@@ -158,4 +158,10 @@ public class Station implements Serializable {
 	public String getStationDetail() {
 		return stationCode + " - " + stationName + " - " + city;
 	}
+
+	@Override
+	public String toString() {
+		return "Station [id=" + id + ", stationCode=" + stationCode + ", stationName=" + stationName + ", city=" + city
+				+ ", country=" + country + ", arrivals=" + arrivals + ", departures=" + departures + "]";
+	}	
 }

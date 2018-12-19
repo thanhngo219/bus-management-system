@@ -1,4 +1,4 @@
-package edu.mum.serviceimpl;
+package edu.mum.service.impl;
 
 import java.util.List;
 
@@ -14,9 +14,6 @@ import edu.mum.service.TripService;
 @Service
 @Transactional
 public class TripServiceImpl implements TripService {
-
-//    @Autowired
-//    TripRepository tripRepository;
 	
 	@Autowired
 	private TripDao tripDao;

@@ -1,4 +1,4 @@
-package edu.mum.serviceimpl;
+package edu.mum.service.impl;
 
 import java.util.List;
 
@@ -13,8 +13,6 @@ import edu.mum.service.StationService;
 @Service
 @Transactional
 public class StationServiceImpl implements StationService {
-//    @Autowired
-//    StationRepository stationRepository;
 
 	@Autowired
 	private StationDao stationDao;

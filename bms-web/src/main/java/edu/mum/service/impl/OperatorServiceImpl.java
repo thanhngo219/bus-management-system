@@ -1,4 +1,4 @@
-package edu.mum.serviceimpl;
+package edu.mum.service.impl;
 
 import java.util.List;
 
@@ -18,7 +18,6 @@ public class OperatorServiceImpl implements OperatorService {
     private OperatorDao operatorDao;
 
     @Override
-
     public List<Operator> findAll() {
         return (List<Operator>) operatorDao.findAll();
     }

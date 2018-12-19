@@ -1,4 +1,4 @@
-package edu.mum.serviceimpl;
+package edu.mum.service.impl;
 
 import java.util.List;
 
@@ -13,8 +13,7 @@ import edu.mum.service.BusService;
 @Service
 @Transactional
 public class BusServiceImpl implements BusService {
-//    @Autowired
-//    BusRepository busRepository;
+
 	@Autowired
 	private BusDao busDao;
 

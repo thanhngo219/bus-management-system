@@ -110,4 +110,11 @@ public class Bus implements Serializable {
 	public String getSerialModel() {
 		return serialNumber + " - " + model;
 	}
+
+	@Override
+	public String toString() {
+		return "Bus [id=" + id + ", serialNumber=" + serialNumber + ", model=" + model + ", capacity=" + capacity
+				+ ", trips=" + trips + "]";
+	}
+	
 }

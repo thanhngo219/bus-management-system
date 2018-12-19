@@ -11,6 +11,14 @@
 
 	<security:global-method-security
 		pre-post-annotations="enabled" />
+
+	<security:http create-session="stateless"
+		pattern="/rest/*/delete/*" use-expressions="true">
+		<security:intercept-url
+			pattern="/rest/*/delete/*" access="hasRole('ROLE_ADMIN')" />
+		<security:http-basic />
+		<security:csrf disabled="true" />
+	</security:http>
 	
 	<security:http use-expressions="true">
 		<security:intercept-url

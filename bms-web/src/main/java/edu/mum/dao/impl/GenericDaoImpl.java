@@ -31,8 +31,10 @@ public abstract class GenericDaoImpl<T> implements GenericDao<T> {
 
 	@Override
 	public void delete(Long id) {
-		T entity = findOne(id);
-		delete(entity);
+//		T entity = findOne(id);
+//		delete(entity);
+		entityManager.createQuery("delete from " + daoType.getName() + " c where c.id=:id").setParameter("id", id)
+				.executeUpdate();
 	}
 
 	@Override

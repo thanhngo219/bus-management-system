@@ -62,6 +62,7 @@ public class EmailService {
 		final MimeMessageHelper message = new MimeMessageHelper(mimeMessage, true, "UTF-8");
 		message.setSubject("Booking Details: " + booking.getConfirmationCode());
 
+		message.setFrom("3t.mum.edu@gmail.com");
 		// could have CC, BCC, will also take an array of Strings
 		message.setTo(booking.getPassengerEmail());
 

@@ -32,7 +32,7 @@ public class LoggingAspect {
 		LOGGER.info("************************************");
 	}
 	
-	@Before("applicationMethod() && loggingArgs(object)")
+	@After("applicationMethod() && loggingArgs(object)")
 	public void doLoggingAfterSaving(JoinPoint joinPoint, Object object) {
 		LOGGER.info("***********AFTER SAVING************");
 		LOGGER.info(joinPoint.getSignature().getDeclaringTypeName());

@@ -8,7 +8,7 @@
 	       <form:errors path="*" cssStyle="color:red;" />
 	
 	       <div class="form-group" >           
-	           <label for="stationnr"><spring:message code="msg.label.bus.serialNumber" /></label>          
+	           <label for="serialNumber"><spring:message code="msg.label.bus.serialNumber" /></label>          
 	           <form:input path="serialNumber" cssClass="form-control"/>
 	       </div>
 	       <div class="form-group" style="float:none;">

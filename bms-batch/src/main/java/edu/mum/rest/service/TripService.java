@@ -34,7 +34,7 @@ public class TripService {
 		RestTemplate restTemplate = restHttpHeader.getRestTemplate();
 		String url = baseUrl + "delete/" + id;
 		System.out.println("Performing REST: " + url);
-		return (restTemplate.exchange(url, HttpMethod.GET, restHttpHeader.getHttpEntity(), Trip.class).getBody());
+		return (restTemplate.exchange(url, HttpMethod.DELETE, restHttpHeader.getHttpEntity(), Trip.class).getBody());
 		// Returns Trip in Body HTTP Message
 	}
 

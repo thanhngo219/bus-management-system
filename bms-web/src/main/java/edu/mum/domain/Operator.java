@@ -15,6 +15,10 @@ import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 @Entity
 @Table(name = "operator")
 public class Operator implements Serializable {
@@ -30,8 +34,9 @@ public class Operator implements Serializable {
 	@Column(name = "operatorName")
 	private String operatorName;
 	
-	@OneToMany(mappedBy = "operator")
+	@OneToMany(mappedBy = "operator", fetch = FetchType.EAGER)
 	@OrderBy("departureDate, departureTime")
+	@JsonBackReference
 	private List<Trip> trips;
 
 	/* Constructors */

@@ -23,6 +23,10 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 @Entity
 @Table(name = "trip")
 public class Trip implements Serializable {
@@ -65,21 +69,26 @@ public class Trip implements Serializable {
    
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "operator_id")
+    @JsonManagedReference
     private Operator operator;
     
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "origin_id")
+    @JsonManagedReference
     private Station origin;
     
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "destination_id")
+    @JsonManagedReference
     private Station destination;
     
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "bus_id")
+    @JsonManagedReference
     private Bus bus;
     
-    @OneToMany(mappedBy = "trip", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "trip", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonManagedReference
     private List<Booking> bookings;
 
     /* Constructors */

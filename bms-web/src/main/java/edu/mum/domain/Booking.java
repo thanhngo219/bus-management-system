@@ -20,6 +20,11 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import edu.mum.validator.Persistence;
 
 @Entity
@@ -45,11 +50,13 @@ public class Booking implements Serializable {
 	@Valid
     @ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "trip_id")
+	@JsonBackReference
     private Trip trip;
 	
 	@Valid
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "passenger_id")
+	@JsonManagedReference
     private Passenger passenger;
     
 	public Booking() {

@@ -1,13 +1,26 @@
 package edu.mum.domain;
 
+import java.io.Serializable;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.Range;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-
-import java.io.Serializable;
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 @Table(name = "bus")
@@ -33,8 +46,9 @@ public class Bus implements Serializable {
 	@Column(name = "capacity")
 	private int capacity;
 	
-	@OneToMany(mappedBy="bus", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="bus", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@OrderBy("departureDate, departureTime")
+	@JsonBackReference
 	private List<Trip> trips;
 
 	/* Constructors */

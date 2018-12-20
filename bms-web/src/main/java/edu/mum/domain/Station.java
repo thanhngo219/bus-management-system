@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,6 +15,10 @@ import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 @Table(name = "station")
@@ -42,12 +47,14 @@ public class Station implements Serializable {
 	@Column(name = "country")
 	private String country;
 
-	@OneToMany(mappedBy = "destination", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "destination", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@OrderBy("arrivalDate, arrivalTime")
+	@JsonBackReference
 	private List<Trip> arrivals;
 
-	@OneToMany(mappedBy = "origin", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "origin", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@OrderBy("departureDate, departureTime")
+	@JsonBackReference
 	private List<Trip> departures;
 
 	/* Constructors */

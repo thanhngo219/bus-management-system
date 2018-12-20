@@ -1,5 +1,6 @@
 package edu.mum.dao.impl;
 
+import javax.persistence.NoResultException;
 import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
@@ -15,6 +16,10 @@ public class BookingDaoImpl extends GenericDaoImpl<Booking> implements BookingDa
 
 	public Booking findBookingByConfirmationCode(String cCode) {
 		Query query = entityManager.createQuery("SELECT b FROM Booking b WHERE confirmationCode = :cCode");
-		return (Booking) query.setParameter("cCode", cCode).getSingleResult();
+		try {
+			return (Booking) query.setParameter("cCode", cCode).getSingleResult();
+		} catch (NoResultException e) {
+			return null;
+		}
 	}
 }

@@ -38,13 +38,10 @@
 					</div>
 
 					<div class="form-group">
-						<button id="btnCancel" class="btn btn-default"
-							name="cancelABooking">
-							<spring:message code='msg.booking.btn.cancel' />
-						</button>
+						<a href="${pageContext.request.contextPath}/trips" class="btn btn-outline-warning"><spring:message code="msg.booking.btn.cancel" /></a>&nbsp;&nbsp;&nbsp;
 						<input type="submit" id="btnAdd"
 							class="btn btn-primary float-right"
-							value="<spring:message code='msg.booking.btn.next'/>"
+							value="<spring:message code='msg.booking.btn.confirm'/>"
 							name="bookATrip" />
 					</div>
 
